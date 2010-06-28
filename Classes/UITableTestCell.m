@@ -16,7 +16,7 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         
-        CGRect tzvFrame = CGRectMake(0.0, 0.0, self.contentView.bounds.size.width, self.contentView.bounds.size.height);
+        CGRect tzvFrame = CGRectMake(0.0, 2.0, 320, self.contentView.bounds.size.height);
 
         testCellView = [[UITableTestCellView alloc] initWithFrame:tzvFrame];
         testCellView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;

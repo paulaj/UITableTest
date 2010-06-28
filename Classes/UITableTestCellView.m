@@ -16,7 +16,7 @@
     if ((self = [super initWithFrame:frame])) {
         
         self.opaque = YES;
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     return self;
 }
@@ -29,9 +29,9 @@
 - (void)setHighlighted:(BOOL)lit {
 	// If highlighted state changes, need to redisplay.
     if(lit) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor blackColor];
     } else {
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     
     [self setNeedsDisplay];    
@@ -45,7 +45,7 @@
     
     [[UIColor redColor] set];
     
-    [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18]];
+    [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
 }
 
 

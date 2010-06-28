@@ -17,17 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    UITableTestViewController *tableViewController = [[UITableTestViewController alloc] initWithStyle:UITableViewStylePlain];
+    UITableTestViewController *tableViewController = [UITableTestViewController alloc]; //initWithFrame:CGRectMake(0, 0, 100, 500)];
+	UIView *newView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1400, 1400) ];
     
-    
-    [tableViewController.nameList addObject:@"Drew"];
-    [tableViewController.nameList addObject:@"Stephanie"];
-    [tableViewController.nameList addObject:@"Ariel"];
-    [tableViewController.nameList addObject:@"Paula"];
+   
 
     // Override point for customization after app launch    
-    [window addSubview:tableViewController.view];
+    [newView addSubview:tableViewController.view];
+	[newView setBackgroundColor:[UIColor whiteColor]];
+	[window addSubview:newView];
     [window makeKeyAndVisible];
+	
 
 	return YES;
 }

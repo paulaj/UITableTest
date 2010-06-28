@@ -15,18 +15,39 @@
 
 #define ROW_HEIGHT 60
 
-- (id)initWithStyle:(UITableViewStyle)style {
-	if (self = [super initWithStyle:style]) {
-		self.title = @"My Awesome Test Table";
-		
-		self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-		self.tableView.rowHeight = ROW_HEIGHT;
-        
-        self.nameList = [NSMutableArray array];
-	}
-	return self;
-}
+//- (id)initWithFrame:(CGRect)frame {
+	//if (self = [super initWithFrame:frame]) {
+	//	self.title = @"My Awesome Test Table";
+		//self.frame=CGRectMake(0, 0, 100, 500);
+//		self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//		self.tableView.rowHeight = ROW_HEIGHT;
+       // self.nameList = [NSMutableArray array];
+	//}
+	//return self;
+//}
+//
 
+
+- (void)loadView {
+    // allocate the subclassed UIView, and set it as the UIViewController's main view
+    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 200, 320, 460) style:UITableViewStylePlain] autorelease];
+	[(UITableView *)self.view setDelegate:self];
+	[(UITableView *)self.view setDataSource:self];
+	
+	[self.view setBackgroundColor:[UIColor blackColor]];
+
+	
+	self.nameList = [NSMutableArray array];
+	[nameList addObject:@"Drew"];
+    [nameList addObject:@"Stephanie"];
+    [nameList addObject:@"Ariel"];
+    [nameList addObject:@"Paula"];
+	[nameList addObject:@"OMG"];
+	[nameList addObject:@"This"];
+	[nameList addObject:@"Actually"];
+	[nameList addObject:@"Works"];
+	NSLog(@":%@", self.nameList);
+}
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -57,6 +78,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     return YES;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic -- create and push a new view controller
+}
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+   [super viewDidLoad];
+}
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -65,10 +93,7 @@
 	// Release any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
+
 
 
 
@@ -97,8 +122,12 @@
     
     NSString *name = [nameList objectAtIndex:indexPath.row];
 	testCell.name = name;
-    
+ 	
     return testCell;
+}
+- (void)viewDidUnload {
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
 }
 
 - (void)dealloc {

@@ -13,6 +13,7 @@
 @interface UITableTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UITableTestViewController *viewController;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

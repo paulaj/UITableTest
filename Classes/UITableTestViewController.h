@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableTestViewController : UITableViewController {
+@interface UITableTestViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *nameList;
 }
+//- (id)initWithFrame:(CGRect)frame;
 
 @property (nonatomic, retain) NSMutableArray *nameList;
 
