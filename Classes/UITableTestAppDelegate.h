@@ -15,11 +15,14 @@
 @interface UITableTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UITableTestViewController *viewController;
+	UIView *newView;
+	
 	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITableTestViewController *viewController;
+@property (nonatomic, retain) IBOutlet UIView *newView;
 
 @end
 

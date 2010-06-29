@@ -19,6 +19,10 @@
 		3A751C7711CC0B7400B94AB3 /* UITableTestCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */; };
 		DAE8730C11DA36EC003C2721 /* user_suit.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730B11DA36EC003C2721 /* user_suit.png */; };
 		DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8739911DA5F85003C2721 /* Arrow.m */; };
+		DAE8747F11DA79A6003C2721 /* With_Elements_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */; };
+		DAE8748411DA8010003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8748311DA8010003C2721 /* LogoView.m */; };
+		DAE874E711DA84B9003C2721 /* UITableTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */; };
+		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,13 @@
 		DAE8730B11DA36EC003C2721 /* user_suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_suit.png; sourceTree = SOURCE_ROOT; };
 		DAE8739811DA5F85003C2721 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		DAE8739911DA5F85003C2721 /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
+		DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = With_Elements_edit.jpg; sourceTree = SOURCE_ROOT; };
+		DAE8748211DA8010003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
+		DAE8748311DA8010003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
+		DAE874E511DA84B9003C2721 /* UITableTestViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestViewController2.h; sourceTree = "<group>"; };
+		DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestViewController2.m; sourceTree = "<group>"; };
+		DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestMasterViewController.h; sourceTree = "<group>"; };
+		DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestMasterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +72,24 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8730B11DA36EC003C2721 /* user_suit.png */,
+				DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */,
+				DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */,
 				1D3623240D0F684500981E51 /* UITableTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */,
-				28D7ACF60DDB3853001CB0EB /* UITableTestViewController.h */,
-				28D7ACF70DDB3853001CB0EB /* UITableTestViewController.m */,
+				DAE8739811DA5F85003C2721 /* Arrow.h */,
+				DAE8739911DA5F85003C2721 /* Arrow.m */,
+				DAE8748211DA8010003C2721 /* LogoView.h */,
+				DAE8748311DA8010003C2721 /* LogoView.m */,
 				3A751C7211CC0AFD00B94AB3 /* UITableTestCell.h */,
 				3A751C7311CC0AFD00B94AB3 /* UITableTestCell.m */,
 				3A751C7511CC0B7400B94AB3 /* UITableTestCellView.h */,
 				3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */,
-				DAE8739811DA5F85003C2721 /* Arrow.h */,
-				DAE8739911DA5F85003C2721 /* Arrow.m */,
+				28D7ACF60DDB3853001CB0EB /* UITableTestViewController.h */,
+				28D7ACF70DDB3853001CB0EB /* UITableTestViewController.m */,
+				DAE874E511DA84B9003C2721 /* UITableTestViewController2.h */,
+				DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */,
+				DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */,
+				DAE8730B11DA36EC003C2721 /* user_suit.png */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -170,6 +188,7 @@
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */,
 				DAE8730C11DA36EC003C2721 /* user_suit.png in Resources */,
+				DAE8747F11DA79A6003C2721 /* With_Elements_edit.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +205,9 @@
 				3A751C7411CC0AFD00B94AB3 /* UITableTestCell.m in Sources */,
 				3A751C7711CC0B7400B94AB3 /* UITableTestCellView.m in Sources */,
 				DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */,
+				DAE8748411DA8010003C2721 /* LogoView.m in Sources */,
+				DAE874E711DA84B9003C2721 /* UITableTestViewController2.m in Sources */,
+				DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
