@@ -24,7 +24,7 @@
     
     UITableTestMasterViewController *tableViewController = [UITableTestMasterViewController alloc];
 	
-	
+	[window setBackgroundColor:[UIColor blackColor]];
    	
     [window addSubview:tableViewController.view];
 	
