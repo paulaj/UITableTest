@@ -47,7 +47,7 @@
 	[nameList addObject:@"Your Mom"];
 	[nameList addObject:@"That Beaver from Narnia"];
 	[nameList addObject:@"Not Drew"];
-	NSLog(@":%@", self.nameList);
+	//NSLog(@":%@", self.nameList);
 	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
 	label.backgroundColor = [UIColor clearColor];
 	label.font = [UIFont boldSystemFontOfSize:50];
