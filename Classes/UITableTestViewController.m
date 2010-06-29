@@ -31,7 +31,7 @@
 
 - (void)loadView {
     // allocate the subclassed UIView, and set it as the UIViewController's main view
-    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 200, 320, 460) style:UITableViewStylePlain] autorelease];
+    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 300, 320, 460) style:UITableViewStylePlain] autorelease];
 	[(UITableView *)self.view setDelegate:self];
 	[(UITableView *)self.view setDataSource:self];
 	
@@ -58,6 +58,8 @@
 	UITableView *myTable = (UITableView *)self.view;
 	myTable.tableHeaderView = label;
 
+	
+	
 }
 
 /*
@@ -86,8 +88,13 @@
 
 
 // Override to allow orientations other than the default portrait orientation.
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+	return YES;
+}
+-(void)willRotateToInterfaceOrientation:
+(UIInterfaceOrientation)orientation
+							   duration:(NSTimeInterval)duration {
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic -- create and push a new view controller

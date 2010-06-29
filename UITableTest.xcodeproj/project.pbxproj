@@ -17,12 +17,8 @@
 		28D7ACF80DDB3853001CB0EB /* UITableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* UITableTestViewController.m */; };
 		3A751C7411CC0AFD00B94AB3 /* UITableTestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A751C7311CC0AFD00B94AB3 /* UITableTestCell.m */; };
 		3A751C7711CC0B7400B94AB3 /* UITableTestCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */; };
-		DAE8730211DA367E003C2721 /* page_user_dark.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730111DA367E003C2721 /* page_user_dark.gif */; };
-		DAE8730411DA368C003C2721 /* page_user_light.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730311DA368C003C2721 /* page_user_light.gif */; };
-		DAE8730611DA3692003C2721 /* page_user.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730511DA3692003C2721 /* page_user.gif */; };
-		DAE8730811DA36CE003C2721 /* status_online.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730711DA36CE003C2721 /* status_online.png */; };
-		DAE8730A11DA36E1003C2721 /* user_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730911DA36E1003C2721 /* user_gray.png */; };
 		DAE8730C11DA36EC003C2721 /* user_suit.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE8730B11DA36EC003C2721 /* user_suit.png */; };
+		DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8739911DA5F85003C2721 /* Arrow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,12 +39,9 @@
 		3A751C7511CC0B7400B94AB3 /* UITableTestCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestCellView.h; sourceTree = "<group>"; };
 		3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestCellView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UITableTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UITableTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		DAE8730111DA367E003C2721 /* page_user_dark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = page_user_dark.gif; sourceTree = SOURCE_ROOT; };
-		DAE8730311DA368C003C2721 /* page_user_light.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = page_user_light.gif; sourceTree = SOURCE_ROOT; };
-		DAE8730511DA3692003C2721 /* page_user.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = page_user.gif; sourceTree = SOURCE_ROOT; };
-		DAE8730711DA36CE003C2721 /* status_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_online.png; sourceTree = SOURCE_ROOT; };
-		DAE8730911DA36E1003C2721 /* user_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_gray.png; sourceTree = SOURCE_ROOT; };
 		DAE8730B11DA36EC003C2721 /* user_suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_suit.png; sourceTree = SOURCE_ROOT; };
+		DAE8739811DA5F85003C2721 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
+		DAE8739911DA5F85003C2721 /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +61,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8730111DA367E003C2721 /* page_user_dark.gif */,
-				DAE8730311DA368C003C2721 /* page_user_light.gif */,
-				DAE8730511DA3692003C2721 /* page_user.gif */,
-				DAE8730911DA36E1003C2721 /* user_gray.png */,
 				DAE8730B11DA36EC003C2721 /* user_suit.png */,
-				DAE8730711DA36CE003C2721 /* status_online.png */,
 				1D3623240D0F684500981E51 /* UITableTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* UITableTestViewController.h */,
@@ -82,6 +70,8 @@
 				3A751C7311CC0AFD00B94AB3 /* UITableTestCell.m */,
 				3A751C7511CC0B7400B94AB3 /* UITableTestCellView.h */,
 				3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */,
+				DAE8739811DA5F85003C2721 /* Arrow.h */,
+				DAE8739911DA5F85003C2721 /* Arrow.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -179,11 +169,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */,
-				DAE8730211DA367E003C2721 /* page_user_dark.gif in Resources */,
-				DAE8730411DA368C003C2721 /* page_user_light.gif in Resources */,
-				DAE8730611DA3692003C2721 /* page_user.gif in Resources */,
-				DAE8730811DA36CE003C2721 /* status_online.png in Resources */,
-				DAE8730A11DA36E1003C2721 /* user_gray.png in Resources */,
 				DAE8730C11DA36EC003C2721 /* user_suit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,6 +185,7 @@
 				28D7ACF80DDB3853001CB0EB /* UITableTestViewController.m in Sources */,
 				3A751C7411CC0AFD00B94AB3 /* UITableTestCell.m in Sources */,
 				3A751C7711CC0B7400B94AB3 /* UITableTestCellView.m in Sources */,
+				DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
