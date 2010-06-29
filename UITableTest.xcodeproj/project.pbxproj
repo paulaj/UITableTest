@@ -49,8 +49,6 @@
 		DAE8730711DA36CE003C2721 /* status_online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_online.png; sourceTree = SOURCE_ROOT; };
 		DAE8730911DA36E1003C2721 /* user_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_gray.png; sourceTree = SOURCE_ROOT; };
 		DAE8730B11DA36EC003C2721 /* user_suit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_suit.png; sourceTree = SOURCE_ROOT; };
-		DAE8733F11DA3EAB003C2721 /* Borders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Borders.h; sourceTree = "<group>"; };
-		DAE8734011DA3EAB003C2721 /* Borders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Borders.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +78,6 @@
 				1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* UITableTestViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* UITableTestViewController.m */,
-				DAE8733F11DA3EAB003C2721 /* Borders.h */,
-				DAE8734011DA3EAB003C2721 /* Borders.m */,
 				3A751C7211CC0AFD00B94AB3 /* UITableTestCell.h */,
 				3A751C7311CC0AFD00B94AB3 /* UITableTestCell.m */,
 				3A751C7511CC0B7400B94AB3 /* UITableTestCellView.h */,

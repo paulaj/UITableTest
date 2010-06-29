@@ -17,14 +17,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    UITableTestViewController *tableViewController = [UITableTestViewController alloc]; //initWithFrame:CGRectMake(0, 0, 100, 500)];
+    UITableTestViewController *tableViewController = [UITableTestViewController alloc];
 	UIView *newView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1400, 1400) ];
-//    Borders *border1=[[[Borders alloc] initWithFrame: CGRectMake(500, 60, 50, 50) ] retain];
+
    
 
-    // Override point for customization after app launch    
+    // Override point for customization after app launch
+	//border
+	CGRect bounds = CGRectMake(198, 198, 324,464);
+	UIView *borderView = [[UIView alloc] initWithFrame:bounds];
+	[borderView setBackgroundColor:[UIColor redColor]];
+	[newView addSubview:borderView];
+	[borderView release];
+	
     [newView addSubview:tableViewController.view];
-//	[newView addSubview:border1];
+
 	[newView setBackgroundColor:[UIColor whiteColor]];
 	[window addSubview:newView];
     [window makeKeyAndVisible];
