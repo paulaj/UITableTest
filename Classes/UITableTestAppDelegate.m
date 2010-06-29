@@ -8,7 +8,7 @@
 
 #import "UITableTestAppDelegate.h"
 #import "UITableTestViewController.h"
-
+//#import "Borders.h"
 @implementation UITableTestAppDelegate
 
 @synthesize window;
@@ -19,14 +19,16 @@
     
     UITableTestViewController *tableViewController = [UITableTestViewController alloc]; //initWithFrame:CGRectMake(0, 0, 100, 500)];
 	UIView *newView= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1400, 1400) ];
-    
+//    Borders *border1=[[[Borders alloc] initWithFrame: CGRectMake(500, 60, 50, 50) ] retain];
    
 
     // Override point for customization after app launch    
     [newView addSubview:tableViewController.view];
+//	[newView addSubview:border1];
 	[newView setBackgroundColor:[UIColor whiteColor]];
 	[window addSubview:newView];
     [window makeKeyAndVisible];
+	
 	
 
 	return YES;

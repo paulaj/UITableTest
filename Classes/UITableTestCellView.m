@@ -41,11 +41,15 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    NSString *string = name;
-    
-    [[UIColor redColor] set];
-    
-    [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
+    NSString *string =[@"       " stringByAppendingString:name];
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+	CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
+	CGContextAddArc(ctx, 10, 10, 4, 0, 2*M_PI , 0); 
+	CGContextFillPath(ctx);
+	
+    [[UIColor whiteColor] set];
+    [[UIImage imageNamed:@"user_suit.png"] drawInRect:CGRectMake(259, 5, 25, 25)];
+    [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
 
 

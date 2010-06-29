@@ -9,6 +9,7 @@
 #import "UITableTestViewController.h"
 #import "UITableTestCell.h"
 
+
 @implementation UITableTestViewController
 
 @synthesize nameList;
@@ -38,15 +39,25 @@
 
 	
 	self.nameList = [NSMutableArray array];
-	[nameList addObject:@"Drew"];
+	//[nameList addObject:@"Drew"];
     [nameList addObject:@"Stephanie"];
     [nameList addObject:@"Ariel"];
     [nameList addObject:@"Paula"];
-	[nameList addObject:@"OMG"];
-	[nameList addObject:@"This"];
-	[nameList addObject:@"Actually"];
-	[nameList addObject:@"Works"];
+	[nameList addObject:@"Vegeta"];
+	[nameList addObject:@"Your Mom"];
+	[nameList addObject:@"That Beaver from Narnia"];
+	[nameList addObject:@"Not Drew"];
 	NSLog(@":%@", self.nameList);
+	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
+	label.backgroundColor = [UIColor clearColor];
+	label.font = [UIFont boldSystemFontOfSize:50];
+	label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+	label.textAlignment = UITextAlignmentCenter;
+	label.textColor = [UIColor redColor];
+	label.text = @"Users";
+	UITableView *myTable = (UITableView *)self.view;
+	myTable.tableHeaderView = label;
+	
 }
 
 /*
