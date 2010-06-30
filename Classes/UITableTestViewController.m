@@ -31,7 +31,7 @@
 
 - (void)loadView {
     // allocate the subclassed UIView, and set it as the UIViewController's main view
-    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 300, 320, 460) style:UITableViewStylePlain] autorelease];
+    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 200, 320, 460) style:UITableViewStylePlain] autorelease];
 	[(UITableView *)self.view setDelegate:self];
 	[(UITableView *)self.view setDataSource:self];
 	

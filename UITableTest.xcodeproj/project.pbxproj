@@ -21,8 +21,10 @@
 		DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8739911DA5F85003C2721 /* Arrow.m */; };
 		DAE8747F11DA79A6003C2721 /* With_Elements_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */; };
 		DAE8748411DA8010003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8748311DA8010003C2721 /* LogoView.m */; };
-		DAE874E711DA84B9003C2721 /* UITableTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */; };
+		DAE874E711DA84B9003C2721 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE874E611DA84B9003C2721 /* RoomViewController.m */; };
 		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
+		DAE8775111DB88F8003C2721 /* RoomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8775011DB88F8003C2721 /* RoomCellView.m */; };
+		DAE8776D11DB8AC5003C2721 /* RoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8776C11DB8AC5003C2721 /* RoomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,10 +51,14 @@
 		DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = With_Elements_edit.jpg; sourceTree = SOURCE_ROOT; };
 		DAE8748211DA8010003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
 		DAE8748311DA8010003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
-		DAE874E511DA84B9003C2721 /* UITableTestViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestViewController2.h; sourceTree = "<group>"; };
-		DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestViewController2.m; sourceTree = "<group>"; };
+		DAE874E511DA84B9003C2721 /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		DAE874E611DA84B9003C2721 /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
 		DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestMasterViewController.h; sourceTree = "<group>"; };
 		DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestMasterViewController.m; sourceTree = "<group>"; };
+		DAE8774F11DB88F8003C2721 /* RoomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCellView.h; sourceTree = "<group>"; };
+		DAE8775011DB88F8003C2721 /* RoomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCellView.m; sourceTree = "<group>"; };
+		DAE8776B11DB8AC5003C2721 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCell.h; sourceTree = "<group>"; };
+		DAE8776C11DB8AC5003C2721 /* RoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +92,13 @@
 				3A751C7611CC0B7400B94AB3 /* UITableTestCellView.m */,
 				28D7ACF60DDB3853001CB0EB /* UITableTestViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* UITableTestViewController.m */,
-				DAE874E511DA84B9003C2721 /* UITableTestViewController2.h */,
-				DAE874E611DA84B9003C2721 /* UITableTestViewController2.m */,
+				DAE874E511DA84B9003C2721 /* RoomViewController.h */,
+				DAE874E611DA84B9003C2721 /* RoomViewController.m */,
+				DAE8774F11DB88F8003C2721 /* RoomCellView.h */,
+				DAE8775011DB88F8003C2721 /* RoomCellView.m */,
 				DAE8747E11DA79A6003C2721 /* With_Elements_edit.jpg */,
+				DAE8776B11DB8AC5003C2721 /* RoomCell.h */,
+				DAE8776C11DB8AC5003C2721 /* RoomCell.m */,
 				DAE8730B11DA36EC003C2721 /* user_suit.png */,
 			);
 			path = Classes;
@@ -206,8 +216,10 @@
 				3A751C7711CC0B7400B94AB3 /* UITableTestCellView.m in Sources */,
 				DAE8739A11DA5F85003C2721 /* Arrow.m in Sources */,
 				DAE8748411DA8010003C2721 /* LogoView.m in Sources */,
-				DAE874E711DA84B9003C2721 /* UITableTestViewController2.m in Sources */,
+				DAE874E711DA84B9003C2721 /* RoomViewController.m in Sources */,
 				DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */,
+				DAE8775111DB88F8003C2721 /* RoomCellView.m in Sources */,
+				DAE8776D11DB8AC5003C2721 /* RoomCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

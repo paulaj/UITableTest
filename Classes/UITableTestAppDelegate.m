@@ -9,7 +9,7 @@
 #import "UITableTestAppDelegate.h"
 #import "UITableTestMasterViewController.h"
 #import "UITableTestViewController.h"
-#import "UITableTestViewController2.h"
+#import "RoomViewController.h"
 #import "Arrow.h"
 #import "LogoView.h"
 
@@ -28,6 +28,7 @@
    	
     [window addSubview:tableViewController.view];
 	
+
     [window makeKeyAndVisible];
 	
 	

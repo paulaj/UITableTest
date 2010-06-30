@@ -6,13 +6,13 @@
 //  Copyright 2010 MIT Media Lab. All rights reserved.
 //
 
-#import "UITableTestViewController2.h"
+#import "RoomViewController.h"
 #import "UITableTestCell.h"
 
 
-@implementation UITableTestViewController2
+@implementation RoomViewController
 
-@synthesize nameList;
+@synthesize roomList;
 
 #define ROW_HEIGHT 60
 
@@ -31,22 +31,24 @@
 
 - (void)loadView {
     // allocate the subclassed UIView, and set it as the UIViewController's main view
-    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(700, 300, 320, 460) style:UITableViewStylePlain] autorelease];
+    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(700, 200, 320, 460) style:UITableViewStylePlain] autorelease];
 	[(UITableView *)self.view setDelegate:self];
 	[(UITableView *)self.view setDataSource:self];
 	
 	[self.view setBackgroundColor:[UIColor blackColor]];
 	
 	
-	self.nameList = [NSMutableArray array];
+	self.roomList = [NSMutableArray array];
 	//[nameList addObject:@"Drew"];
-    [nameList addObject:@"Stephanie"];
-    [nameList addObject:@"Ariel"];
-    [nameList addObject:@"Paula"];
-	[nameList addObject:@"Vegeta"];
-	[nameList addObject:@"Your Mom"];
-	[nameList addObject:@"That Beaver from Narnia"];
-	[nameList addObject:@"Not Drew"];
+    [roomList addObject:@"Queen's Garden"];
+    [roomList addObject:@"Chessboard Forest"];
+    [roomList addObject:@"Bizzare Room"];
+	[roomList addObject:@"Rabbit Hole"];
+	[roomList addObject:@"Mad Hatter's House"];
+	[roomList addObject:@"March Hare's House"];
+	[roomList addObject:@"CourtRoom"];
+	
+	
 	//NSLog(@":%@", self.nameList);
 	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
 	label.backgroundColor = [UIColor clearColor];
@@ -54,7 +56,7 @@
 	label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
 	label.textAlignment = UITextAlignmentCenter;
 	label.textColor = [UIColor redColor];
-	label.text = @"Users";
+	label.text = @"Rooms";
 	UITableView *myTable = (UITableView *)self.view;
 	myTable.tableHeaderView = label;
 	
@@ -99,7 +101,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.nameList count];
+	return [self.roomList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
@@ -115,8 +117,8 @@
         testCell.frame = CGRectMake(0.0, 0.0, 320.0, ROW_HEIGHT);
     }
     
-    NSString *name = [nameList objectAtIndex:indexPath.row];
-	testCell.name = name;
+    NSString *room = [roomList objectAtIndex:indexPath.row];
+	testCell.name = room;
  	
     return testCell;
 }

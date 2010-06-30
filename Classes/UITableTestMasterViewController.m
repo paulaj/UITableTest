@@ -9,7 +9,7 @@
 #import "UITableTestMasterViewController.h"
 #import "UITableTestAppDelegate.h"
 #import "UITableTestViewController.h"
-#import "UITableTestViewController2.h"
+#import "RoomViewController.h"
 #import "Arrow.h"
 #import "LogoView.h"
 
@@ -31,37 +31,40 @@
 - (void)loadView {
 	NSLog(@"Called?");
 	//masterView
-	self.view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024) ];
-
+	//CCGRect appFrame = [[UIScreen mainScreen] applicationFrame];
+	//CGFloat x = appFrame.size.height;
+	//CGFloat y = appFrame.size.height;
+	self.view= [[UIView alloc] initWithFrame:CGRectMake(-100, 300, 1068, 724) ];
+	//self.view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) ];
 	//tables
 	UITableTestViewController *tableViewController = [UITableTestViewController alloc];
-	UITableTestViewController2 *tableViewController2 = [UITableTestViewController2 alloc];
+	RoomViewController *roomViewController = [RoomViewController alloc];
 	
 	//Arrows
-	Arrow *arrowLeft=[[[Arrow alloc] initWithFrame: CGRectMake(163, 470, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
-	Arrow *arrowLeft4OtherTable=[[[Arrow alloc] initWithFrame: CGRectMake(660, 470, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
+	Arrow *arrowLeft=[[[Arrow alloc] initWithFrame: CGRectMake(163, 370, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
+	Arrow *arrowLeft4OtherTable=[[[Arrow alloc] initWithFrame: CGRectMake(660, 370, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
 	
-	Arrow *arrowRight=[[[Arrow alloc] initWithFrame: CGRectMake(527.5, 470, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
-	Arrow *arrowRight4Pic=[[[Arrow alloc] initWithFrame: CGRectMake(35, 470, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
+	Arrow *arrowRight=[[[Arrow alloc] initWithFrame: CGRectMake(527.5, 370, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
+	Arrow *arrowRight4Pic=[[[Arrow alloc] initWithFrame: CGRectMake(35, 370, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
 	//Future Logo
-	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"With_Elements_edit.jpg"] withFrame: CGRectMake(-470, 280, 500, 500)] retain];
+	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"With_Elements_edit.jpg"] withFrame: CGRectMake(-470, 180, 500, 500)] retain];
 	
-	CGRect bounds = CGRectMake(198, 298, 324,464);
+	CGRect bounds = CGRectMake(198, 198, 324,464);
 	UIView *borderView = [[UIView alloc] initWithFrame:bounds];
 	[borderView setBackgroundColor:[UIColor redColor]];
 	[self.view addSubview:borderView];
 	[self.view addSubview:picView];
 	[borderView release];
 	
-	CGRect bounds2 = CGRectMake(698, 298, 324,464);
+	CGRect bounds2 = CGRectMake(698, 198, 324,464);
 	UIView *border2View = [[UIView alloc] initWithFrame:bounds2];
 	[border2View setBackgroundColor:[UIColor redColor]];
 	[self.view addSubview:border2View];
 	[border2View release];
 	
     [self.view addSubview:tableViewController.view];
-	[self.view addSubview:tableViewController2.view];
-	[self.view setBackgroundColor:[UIColor blackColor]];
+	[self.view addSubview:roomViewController.view];
+	[self.view setBackgroundColor:[UIColor blackColor]]; // so it doesn't hurt eyes
 	
 	[self.view addSubview:arrowLeft];
 	[self.view addSubview:arrowRight];
