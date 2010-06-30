@@ -8,10 +8,8 @@
 
 #import "UITableTestMasterViewController.h"
 #import "UITableTestAppDelegate.h"
-#import "UITableTestViewController.h"
-#import "RoomViewController.h"
 #import "Arrow.h"
-#import "LogoView.h"
+
 
 @implementation UITableTestMasterViewController
 
@@ -34,48 +32,33 @@
 	//CCGRect appFrame = [[UIScreen mainScreen] applicationFrame];
 	//CGFloat x = appFrame.size.height;
 	//CGFloat y = appFrame.size.height;
-	self.view= [[UIView alloc] initWithFrame:CGRectMake(-100, 300, 1068, 724) ];
-	//self.view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1024, 768) ];
-	//tables
-	UITableTestViewController *tableViewController = [UITableTestViewController alloc];
-	RoomViewController *roomViewController = [RoomViewController alloc];
 	
+	self.view= [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1400, 700) ];
+	self.view.center= CGPointMake(768/2.0, 1024/2.0);
 	//Arrows
-	Arrow *arrowLeft=[[[Arrow alloc] initWithFrame: CGRectMake(163, 370, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
-	Arrow *arrowLeft4OtherTable=[[[Arrow alloc] initWithFrame: CGRectMake(660, 370, 25, 25) withDirectionOfChange:@"Left" withController:self] retain];
+	CGFloat arrowSize= self.view.frame.size.width/40.0;
+	CGFloat arrowSpace=self.view.frame.size.width/8;
 	
-	Arrow *arrowRight=[[[Arrow alloc] initWithFrame: CGRectMake(527.5, 370, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
-	Arrow *arrowRight4Pic=[[[Arrow alloc] initWithFrame: CGRectMake(35, 370, 25, 25) withDirectionOfChange:@"Right" withController:self] retain];
-	//Future Logo
-	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"With_Elements_edit.jpg"] withFrame: CGRectMake(-470, 180, 500, 500)] retain];
+	Arrow *arrowPicRight=[[[Arrow alloc] initWithFrame: CGRectMake(self.view.frame.size.width/2-(1.5*arrowSpace), self.view.frame.size.height/2.0 -(arrowSize/2.0), arrowSize, arrowSize) withDirectionOfChange:@"Right" withController:self] retain];
+	Arrow *arrowLocLeft=[[[Arrow alloc] initWithFrame: CGRectMake(self.view.frame.size.width/2-(arrowSpace) , self.view.frame.size.height/2.0-(arrowSize/2.0), arrowSize, arrowSize) withDirectionOfChange:@"Left" withController:self] retain];
+	Arrow *arrowLocRight=[[[Arrow alloc] initWithFrame: CGRectMake(self.view.frame.size.width/2+(arrowSpace), self.view.frame.size.height/2.0 -(arrowSize/2.0), arrowSize, arrowSize) withDirectionOfChange:@"Right" withController:self] retain];
+	Arrow *arrowRoomLeft=[[[Arrow alloc] initWithFrame: CGRectMake(self.view.frame.size.width/2+(1.5*arrowSpace) , self.view.frame.size.height/2.0-(arrowSize/2.0), arrowSize, arrowSize) withDirectionOfChange:@"Left" withController:self] retain];
+			
+		
+    
+	[self.view setBackgroundColor:[UIColor grayColor]]; // so it doesn't hurt eyes
 	
-	CGRect bounds = CGRectMake(198, 198, 324,464);
-	UIView *borderView = [[UIView alloc] initWithFrame:bounds];
-	[borderView setBackgroundColor:[UIColor redColor]];
-	[self.view addSubview:borderView];
-	[self.view addSubview:picView];
-	[borderView release];
-	
-	CGRect bounds2 = CGRectMake(698, 198, 324,464);
-	UIView *border2View = [[UIView alloc] initWithFrame:bounds2];
-	[border2View setBackgroundColor:[UIColor redColor]];
-	[self.view addSubview:border2View];
-	[border2View release];
-	
-    [self.view addSubview:tableViewController.view];
-	[self.view addSubview:roomViewController.view];
-	[self.view setBackgroundColor:[UIColor blackColor]]; // so it doesn't hurt eyes
-	
-	[self.view addSubview:arrowLeft];
-	[self.view addSubview:arrowRight];
-	[self.view addSubview:arrowRight4Pic];
-	[self.view addSubview:arrowLeft4OtherTable];
+	[self.view addSubview:arrowLocLeft];
+	[self.view addSubview:arrowLocRight];
+	[self.view addSubview:arrowRoomLeft];
+	[self.view addSubview:arrowPicRight];
 	
 	
 	//landscape
-	CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI/2);
-	self.view.transform = transform;
-		
+	//CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI/2);
+//	transform=CGAffineTransformScale(transform, .5, .5);
+//	self.view.transform = transform;
+//		
 	
 }
 
@@ -86,10 +69,7 @@
 	//self.center = CGPointMake(384, 512)
 	
 	//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI/2);
-	CGAffineTransform transform = self.view.transform;
-	
-	transform = CGAffineTransformTranslate(transform, 600, 0);
-	[self.view setTransform:transform];
+	self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
 	
 	// Now set the callback.
 	[UIView setAnimationDelegate:self.view];
@@ -105,9 +85,7 @@
 	//self.center = CGPointMake(384, 512)
 	
 	//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI/2);
-	CGAffineTransform transform = self.view.transform;
-	transform = CGAffineTransformTranslate(transform,  -600, 0);
-	[self.view setTransform:transform];
+	self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
 	
 	// Now set the callback.
 	[UIView setAnimationDelegate:self.view];
@@ -125,7 +103,7 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return NO;
 }
 
 

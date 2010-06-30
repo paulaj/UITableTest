@@ -8,10 +8,9 @@
 
 #import "UITableTestAppDelegate.h"
 #import "UITableTestMasterViewController.h"
-#import "UITableTestViewController.h"
-#import "RoomViewController.h"
-#import "Arrow.h"
-#import "LogoView.h"
+
+#import "Square.h"
+
 
 @implementation UITableTestAppDelegate
 
@@ -24,6 +23,9 @@
     
     UITableTestMasterViewController *tableViewController = [UITableTestMasterViewController alloc];
 	
+	
+	[window setTransform:CGAffineTransformMakeRotation(M_PI/2)];
+	 
 	[window setBackgroundColor:[UIColor blackColor]];
    	
     [window addSubview:tableViewController.view];
@@ -38,7 +40,7 @@
 }
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+	return NO;
 }
 - (void)dealloc {
     [viewController release];

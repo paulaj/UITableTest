@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class UITableTestMasterViewController;
 
-@interface Arrow : UIView {
+@interface Square : UIView {
 	NSString *directionOfChange;
 	UITableTestMasterViewController *controller; 
 

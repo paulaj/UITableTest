@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Arrow.h"
 
-@class UITableTestViewController;
+@class UITableTestMasterViewController;
 @class Arrow;
 
 @interface UITableTestMasterViewController : UIViewController {
-		UIView *newView;
 
 }
 
