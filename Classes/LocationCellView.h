@@ -1,5 +1,5 @@
 //
-//  UITableTestCellView.h
+//  LocationCellView.h
 //  UITableTest
 //
 //  Created by Drew Harry on 6/18/10.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UITableTestCellView : UIView {
-    NSString *name;
+@interface LocationCellView : UIView {
+    NSString *loc;
 }
 
 @end

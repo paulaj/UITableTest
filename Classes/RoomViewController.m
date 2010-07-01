@@ -1,67 +1,87 @@
     //
-//  UITableTestViewController2.m
-//  UITableTest
+//  RoomViewController2.m
+//  Room
 //
 //  Created by Paula Jacobs on 6/29/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.
 //
 
 #import "RoomViewController.h"
-#import "UITableTestCell.h"
+#import "RoomCell.h"
 
 
 @implementation RoomViewController
 
 @synthesize roomList;
-
+@synthesize meetingList;
+@synthesize countedList;
 #define ROW_HEIGHT 60
 
-//- (id)initWithFrame:(CGRect)frame {
-//if (self = [super initWithFrame:frame]) {
-//	self.title = @"My Awesome Test Table";
-//self.frame=CGRectMake(0, 0, 100, 500);
-//		self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//		self.tableView.rowHeight = ROW_HEIGHT;
-// self.nameList = [NSMutableArray array];
-//}
-//return self;
-//}
-//
+- (id)initWithFrame:(CGRect)frame {
+	if (self = [super init]) {
+		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
+		//CGFloat viewWidth=CGRectGetWidth(frame);
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 300, 400) style:UITableViewStylePlain] autorelease];
+		
+		[(UITableView *)self.view setDelegate:self];
+		[(UITableView *)self.view setDataSource:self];
+		
+		[self.view setBackgroundColor:[UIColor blackColor]];
+		
+		
+		self.roomList = [NSMutableArray array];
+		self.meetingList = [NSMutableArray array];
+		self.countedList = [NSMutableArray array];
+		//[countedList addObject:@"Drew"];
+		[roomList addObject:@"Queen's Garden"];
+		[roomList addObject:@"Chessboard Forest"];
+		[roomList addObject:@"Bizzare Room"];
+		[roomList addObject:@"Rabbit Hole"];
+		[roomList addObject:@"Mad Hatter's House"];
+		[roomList addObject:@"March Hare's House"];
+		[roomList addObject:@"CourtRoom"];
+		
+		[meetingList addObject:@"Very Important"];
+		[meetingList addObject:@"#120391"];
+		[meetingList addObject:@"#3.14159"];
+		[meetingList addObject:@"Dinner"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Trial"];
+		
+		[countedList addObject:@"16"];
+		[countedList addObject:@"55"];
+		[countedList addObject:@"1"];
+		[countedList addObject:@"27"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"5"];
+		
+		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
+		label.backgroundColor = [UIColor clearColor];
+		label.font = [UIFont boldSystemFontOfSize:50];
+		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+		label.textAlignment = UITextAlignmentCenter;
+		label.textColor = [UIColor redColor];
+		label.text = @"Rooms";
+		UITableView *myTable = (UITableView *)self.view;
+		myTable.tableHeaderView = label;
+		
+			
+		
+		//self.title = @"My Awesome Test Table";
+		//self.frame=CGRectMake(0, 0, 100, 500);
+		//self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+		//self.tableView.rowHeight = ROW_HEIGHT;
+		// self.countedList = [NSMutableArray array];
+	}
+	return self;
+}
+
 
 
 - (void)loadView {
-    // allocate the subclassed UIView, and set it as the UIViewController's main view
-    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(700, 200, 320, 460) style:UITableViewStylePlain] autorelease];
-	[(UITableView *)self.view setDelegate:self];
-	[(UITableView *)self.view setDataSource:self];
-	
-	[self.view setBackgroundColor:[UIColor blackColor]];
-	
-	
-	self.roomList = [NSMutableArray array];
-	//[nameList addObject:@"Drew"];
-    [roomList addObject:@"Queen's Garden"];
-    [roomList addObject:@"Chessboard Forest"];
-    [roomList addObject:@"Bizzare Room"];
-	[roomList addObject:@"Rabbit Hole"];
-	[roomList addObject:@"Mad Hatter's House"];
-	[roomList addObject:@"March Hare's House"];
-	[roomList addObject:@"CourtRoom"];
-	
-	
-	//NSLog(@":%@", self.nameList);
-	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-	label.backgroundColor = [UIColor clearColor];
-	label.font = [UIFont boldSystemFontOfSize:50];
-	label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-	label.textAlignment = UITextAlignmentCenter;
-	label.textColor = [UIColor redColor];
-	label.text = @"Rooms";
-	UITableView *myTable = (UITableView *)self.view;
-	myTable.tableHeaderView = label;
-	
-	
-	
+    	
 }
 
 
@@ -108,17 +128,21 @@
     
     NSLog(@"Got tableView call");
     
-    static NSString *CellIdentifier = @"UITableTestCell";
+    static NSString *CellIdentifier = @"RoomCell";
     
-	UITableTestCell *testCell = (UITableTestCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	RoomCell *testCell = (RoomCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(testCell==nil) {
-        testCell = [[[UITableTestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        testCell = [[[RoomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         testCell.frame = CGRectMake(0.0, 0.0, 320.0, ROW_HEIGHT);
     }
     
     NSString *room = [roomList objectAtIndex:indexPath.row];
-	testCell.name = room;
+	testCell.room = room;
+	NSString *meeting = [meetingList objectAtIndex:indexPath.row];
+	testCell.meeting = meeting;
+	NSString *counted = [countedList objectAtIndex:indexPath.row];
+	testCell.counted = counted;
  	
     return testCell;
 }

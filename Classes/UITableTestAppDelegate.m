@@ -9,7 +9,7 @@
 #import "UITableTestAppDelegate.h"
 #import "UITableTestMasterViewController.h"
 
-#import "Square.h"
+
 
 
 @implementation UITableTestAppDelegate
@@ -23,9 +23,12 @@
     
     UITableTestMasterViewController *tableViewController = [UITableTestMasterViewController alloc];
 	
+	CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI/2);
+	//transform = CGAffineTransformTranslate(transform, 600, 0);
 	
-	[window setTransform:CGAffineTransformMakeRotation(M_PI/2)];
-	 
+	[window setTransform:transform];
+	
+	
 	[window setBackgroundColor:[UIColor blackColor]];
    	
     [window addSubview:tableViewController.view];

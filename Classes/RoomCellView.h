@@ -11,6 +11,10 @@
 
 @interface RoomCellView : UIView {
 	NSString *room;
+	NSString *meeting;
+	NSString *counted;
 }
 - (void) setRoom:(NSString *)newRoom;
+- (void) setMeeting:(NSString *)newMeeting;
+- (void) setCounted:(NSString *)newCounted;
 @end

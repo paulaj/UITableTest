@@ -1,34 +1,34 @@
 //
-//  UITableTestCell.m
+//  LocationCell.m
 //  UITableTest
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.
 //
 
-#import "UITableTestCell.h"
+#import "LocationCell.h"
 
 
-@implementation UITableTestCell
+@implementation LocationCell
 
-@synthesize name;
+@synthesize loc;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         
         CGRect tzvFrame = CGRectMake(0.0, 0.0, 320, self.contentView.bounds.size.height);
 
-        testCellView = [[UITableTestCellView alloc] initWithFrame:tzvFrame];
-        testCellView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        locCellView = [[LocationCellView alloc] initWithFrame:tzvFrame];
+        locCellView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        [self.contentView addSubview:testCellView];
+        [self.contentView addSubview:locCellView];
     }
     return self;
 }
 
-- (void)setName:(NSString *)newName {
+- (void)setLoc:(NSString *)newLoc {
     
-    [testCellView setName:newName];
+    [locCellView setLoc:newLoc];
 }
 
 //- (void)setSelected:(BOOL)selected animated:(BOOL)animated {

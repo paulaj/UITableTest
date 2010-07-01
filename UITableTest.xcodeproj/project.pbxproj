@@ -14,9 +14,17 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* UITableTestViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		DAE8739A11DA5F85003C2721 /* Square.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8739911DA5F85003C2721 /* Square.m */; };
 		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
 		DAE8796211DBDCDB003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8796111DBDCDB003C2721 /* Arrow.m */; };
+		DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8799C11DCD91E003C2721 /* LogoView.m */; };
+		DAE879AB11DCD9B0003C2721 /* With_Elements_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */; };
+		DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879C411DCDE0C003C2721 /* LocationViewController.m */; };
+		DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879CF11DCDFF0003C2721 /* LocationCell.m */; };
+		DAE879D311DCE004003C2721 /* LocationCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879D211DCE004003C2721 /* LocationCellView.m */; };
+		DAE87AC011DCF17F003C2721 /* RoomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABB11DCF17F003C2721 /* RoomCell.m */; };
+		DAE87AC111DCF17F003C2721 /* RoomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABD11DCF17F003C2721 /* RoomCellView.m */; };
+		DAE87AC211DCF17F003C2721 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABF11DCF17F003C2721 /* RoomViewController.m */; };
+		DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,12 +39,26 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* UITableTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTest_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UITableTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UITableTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		DAE8739811DA5F85003C2721 /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
-		DAE8739911DA5F85003C2721 /* Square.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Square.m; sourceTree = "<group>"; };
 		DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestMasterViewController.h; sourceTree = "<group>"; };
 		DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestMasterViewController.m; sourceTree = "<group>"; };
 		DAE8796011DBDCDB003C2721 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
 		DAE8796111DBDCDB003C2721 /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
+		DAE8798D11DCD8ED003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
+		DAE8799C11DCD91E003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
+		DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = With_Elements_edit.jpg; sourceTree = "<group>"; };
+		DAE879C411DCDE0C003C2721 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		DAE879C611DCDE13003C2721 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		DAE879CE11DCDFE7003C2721 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
+		DAE879CF11DCDFF0003C2721 /* LocationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCell.m; sourceTree = "<group>"; };
+		DAE879D111DCDFFD003C2721 /* LocationCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCellView.h; sourceTree = "<group>"; };
+		DAE879D211DCE004003C2721 /* LocationCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationCellView.m; sourceTree = "<group>"; };
+		DAE87ABA11DCF16D003C2721 /* RoomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCell.h; sourceTree = "<group>"; };
+		DAE87ABB11DCF17F003C2721 /* RoomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCell.m; sourceTree = "<group>"; };
+		DAE87ABC11DCF17F003C2721 /* RoomCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCellView.h; sourceTree = "<group>"; };
+		DAE87ABD11DCF17F003C2721 /* RoomCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCellView.m; sourceTree = "<group>"; };
+		DAE87ABE11DCF17F003C2721 /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
+		DAE87ABF11DCF17F003C2721 /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
+		DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_can_phone.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,14 +78,28 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8796011DBDCDB003C2721 /* Arrow.h */,
-				DAE8796111DBDCDB003C2721 /* Arrow.m */,
 				DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */,
 				DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */,
 				1D3623240D0F684500981E51 /* UITableTestAppDelegate.h */,
 				1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */,
-				DAE8739811DA5F85003C2721 /* Square.h */,
-				DAE8739911DA5F85003C2721 /* Square.m */,
+				DAE879C611DCDE13003C2721 /* LocationViewController.h */,
+				DAE879C411DCDE0C003C2721 /* LocationViewController.m */,
+				DAE879CE11DCDFE7003C2721 /* LocationCell.h */,
+				DAE879CF11DCDFF0003C2721 /* LocationCell.m */,
+				DAE879D111DCDFFD003C2721 /* LocationCellView.h */,
+				DAE879D211DCE004003C2721 /* LocationCellView.m */,
+				DAE8798D11DCD8ED003C2721 /* LogoView.h */,
+				DAE8799C11DCD91E003C2721 /* LogoView.m */,
+				DAE8796011DBDCDB003C2721 /* Arrow.h */,
+				DAE8796111DBDCDB003C2721 /* Arrow.m */,
+				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
+				DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */,
+				DAE87ABA11DCF16D003C2721 /* RoomCell.h */,
+				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
+				DAE87ABC11DCF17F003C2721 /* RoomCellView.h */,
+				DAE87ABD11DCF17F003C2721 /* RoomCellView.m */,
+				DAE87ABE11DCF17F003C2721 /* RoomViewController.h */,
+				DAE87ABF11DCF17F003C2721 /* RoomViewController.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 			);
 			path = Classes;
@@ -162,6 +198,8 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */,
+				DAE879AB11DCD9B0003C2721 /* With_Elements_edit.jpg in Resources */,
+				DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,9 +212,15 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* UITableTestAppDelegate.m in Sources */,
-				DAE8739A11DA5F85003C2721 /* Square.m in Sources */,
 				DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */,
 				DAE8796211DBDCDB003C2721 /* Arrow.m in Sources */,
+				DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */,
+				DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */,
+				DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */,
+				DAE879D311DCE004003C2721 /* LocationCellView.m in Sources */,
+				DAE87AC011DCF17F003C2721 /* RoomCell.m in Sources */,
+				DAE87AC111DCF17F003C2721 /* RoomCellView.m in Sources */,
+				DAE87AC211DCF17F003C2721 /* RoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

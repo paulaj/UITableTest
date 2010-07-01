@@ -40,8 +40,8 @@
 	
 	if (directionOfChange==@"Left") {
 		CGContextMoveToPoint(ctx, lineSize, self.frame.size.height/2.0);
-		CGContextAddLineToPoint(ctx, self.frame.size.width, lineSize);
-		CGContextAddLineToPoint(ctx, self.frame.size.width, self.frame.size.height);
+		CGContextAddLineToPoint(ctx, self.frame.size.width-lineSize, lineSize);
+		CGContextAddLineToPoint(ctx, self.frame.size.width-lineSize, self.frame.size.height-lineSize);
 		CGContextClosePath(ctx);
 		CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
 		CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
@@ -52,8 +52,8 @@
 		
 	}
 	else if (directionOfChange==@"Right") {
-		CGContextMoveToPoint(ctx, self.frame.size.width, self.frame.size.height/2.0);
-		CGContextAddLineToPoint(ctx, lineSize,self.frame.size.height);
+		CGContextMoveToPoint(ctx, self.frame.size.width-lineSize, self.frame.size.height/2.0);
+		CGContextAddLineToPoint(ctx, lineSize,self.frame.size.height-lineSize);
 		CGContextAddLineToPoint(ctx, lineSize, lineSize);
 		CGContextClosePath(ctx);
 		CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);

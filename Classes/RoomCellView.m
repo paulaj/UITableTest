@@ -25,6 +25,12 @@
     room = newRoom;
 }
 
+- (void) setMeeting:(NSString *)newMeeting {
+    meeting = newMeeting;
+}
+- (void) setCounted:(NSString *)newCounted {
+    counted = newCounted;
+}
 
 - (void)setHighlighted:(BOOL)lit {
 	// If highlighted state changes, need to redisplay.
@@ -41,10 +47,16 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    NSString *string =room;
+	NSString *string = room ;
 	
-    [[UIColor whiteColor] set];
+	NSString *meetings = [@"        \n\nMeeting:" stringByAppendingString:meeting];
+	NSString *countedPeople=[counted stringByAppendingString:@"    "];
+	NSString *numberPeople = [@"             \n\n# Attending:" stringByAppendingString: countedPeople];
+	
+	[[UIColor whiteColor] set];
     [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
+	[numberPeople drawInRect:self.bounds withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentRight];
+	[meetings drawInRect:self.bounds withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
 
 

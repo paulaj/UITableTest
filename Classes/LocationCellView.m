@@ -1,15 +1,15 @@
 //
-//  UITableTestCellView.m
+//  LocationCellView.m
 //  UITableTest
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.
 //
 
-#import "UITableTestCellView.h"
+#import "LocationCellView.h"
 
 
-@implementation UITableTestCellView
+@implementation LocationCellView
 
 
 - (id)initWithFrame:(CGRect)frame {
@@ -21,8 +21,8 @@
     return self;
 }
 
-- (void) setName:(NSString *)newName {
-    name = newName;
+- (void) setLoc:(NSString *)newLoc {
+    loc = newLoc;
 }
 
 
@@ -41,14 +41,14 @@
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    NSString *string =[@"       " stringByAppendingString:name];
+    NSString *string =[@"       " stringByAppendingString:loc];
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
 	CGContextAddArc(ctx, 10, 10, 4, 0, 2*M_PI , 0); 
 	CGContextFillPath(ctx);
 	
     [[UIColor whiteColor] set];
-    [[UIImage imageNamed:@"user_suit.png"] drawInRect:CGRectMake(259, 5, 25, 25)];
+    //[[UIImage imageNamed:@"user_suit.png"] drawInRect:CGRectMake(259, 5, 25, 25)];
     [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
 

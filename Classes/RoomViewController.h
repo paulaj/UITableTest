@@ -10,10 +10,14 @@
 
 @interface RoomViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *roomList;
+	NSMutableArray *meetingList;
+	NSMutableArray *countedList;
 }
 
 
 @property (nonatomic, retain) NSMutableArray *roomList;
+@property (nonatomic, retain) NSMutableArray *meetingList;
+@property (nonatomic, retain) NSMutableArray *countedList;
 
 @end
 

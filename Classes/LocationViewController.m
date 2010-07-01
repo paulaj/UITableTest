@@ -1,65 +1,70 @@
 //
-//  UITableTestViewController.m
+//  LocationViewController.m
 //  UITableTest
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright MIT Media Lab 2010. All rights reserved.
 //
 
-#import "UITableTestViewController.h"
-#import "UITableTestCell.h"
+#import "LocationViewController.h"
+#import "LocationCell.h"
+#import "UITableTestMasterViewController.h"
 
+@implementation LocationViewController
 
-@implementation UITableTestViewController
-
-@synthesize nameList;
+@synthesize locList;
 
 #define ROW_HEIGHT 60
 
-//- (id)initWithFrame:(CGRect)frame {
-	//if (self = [super initWithFrame:frame]) {
-	//	self.title = @"My Awesome Test Table";
+- (id)initWithFrame:(CGRect)frame {
+	if (self = [super init]) {
+		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
+		//CGFloat viewWidth=CGRectGetWidth(frame);
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 300, 400) style:UITableViewStylePlain] autorelease];
+		
+		[(UITableView *)self.view setDelegate:self];
+		[(UITableView *)self.view setDataSource:self];
+		
+		[self.view setBackgroundColor:[UIColor blackColor]];
+		
+		
+		self.locList = [NSMutableArray array];
+		[locList addObject:@"Here"];
+		[locList addObject:@"There"];
+		[locList addObject:@"Everywhere"];
+		[locList addObject:@"Underwear"];
+		[locList addObject:@"In Your Hair"];
+		[locList addObject:@"Fight a Bear"];
+		[locList addObject:@"With Your Chair"];
+		//NSLog(@":%@", self.locList);
+		
+		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
+		label.backgroundColor = [UIColor clearColor];
+		label.font = [UIFont boldSystemFontOfSize:50];
+		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+		label.textAlignment = UITextAlignmentCenter;
+		label.textColor = [UIColor redColor];
+		label.text = @"Locations";
+		UITableView *myTable = (UITableView *)self.view;
+		myTable.tableHeaderView = label;
+		
+		
+		
+		
+				//self.title = @"My Awesome Test Table";
 		//self.frame=CGRectMake(0, 0, 100, 500);
-//		self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-//		self.tableView.rowHeight = ROW_HEIGHT;
+		//self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+		//self.tableView.rowHeight = ROW_HEIGHT;
        // self.nameList = [NSMutableArray array];
-	//}
-	//return self;
-//}
-//
+	}
+	return self;
+}
+
 
 
 - (void)loadView {
     // allocate the subclassed UIView, and set it as the UIViewController's main view
-    self.view = [[[UITableView alloc] initWithFrame:CGRectMake(200, 200, 320, 460) style:UITableViewStylePlain] autorelease];
-	[(UITableView *)self.view setDelegate:self];
-	[(UITableView *)self.view setDataSource:self];
-	
-	[self.view setBackgroundColor:[UIColor blackColor]];
-
-	
-	self.nameList = [NSMutableArray array];
-	//[nameList addObject:@"Drew"];
-    [nameList addObject:@"Stephanie"];
-    [nameList addObject:@"Ariel"];
-    [nameList addObject:@"Paula"];
-	[nameList addObject:@"Vegeta"];
-	[nameList addObject:@"Your Mom"];
-	[nameList addObject:@"That Beaver from Narnia"];
-	[nameList addObject:@"Not Drew"];
-	//NSLog(@":%@", self.nameList);
-	UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-	label.backgroundColor = [UIColor clearColor];
-	label.font = [UIFont boldSystemFontOfSize:50];
-	label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-	label.textAlignment = UITextAlignmentCenter;
-	label.textColor = [UIColor redColor];
-	label.text = @"Users";
-	UITableView *myTable = (UITableView *)self.view;
-	myTable.tableHeaderView = label;
-
-	
-	
+		
 }
 
 /*
@@ -122,24 +127,24 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.nameList count];
+	return [self.locList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
-    NSLog(@"Got tableView call");
+    //NSLog(@"Got tableView call");
     
     static NSString *CellIdentifier = @"UITableTestCell";
     
-	UITableTestCell *testCell = (UITableTestCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	LocationCell *testCell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(testCell==nil) {
-        testCell = [[[UITableTestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        testCell = [[[LocationCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         testCell.frame = CGRectMake(0.0, 0.0, 320.0, ROW_HEIGHT);
     }
     
-    NSString *name = [nameList objectAtIndex:indexPath.row];
-	testCell.name = name;
+    NSString *loc = [locList objectAtIndex:indexPath.row];
+	testCell.loc = loc;
  	
     return testCell;
 }

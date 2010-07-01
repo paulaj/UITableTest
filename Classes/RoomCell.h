@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "RoomCellView.h"
 
-@interface RoomCell : UIView {
+@interface RoomCell : UITableViewCell {
 	RoomCellView *roomCellView;
     NSString *room;
+	NSString *meeting;
+	NSString *counted;
 }
 
 - (void) setRoom:(NSString *)room;
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
+- (void) setMeeting:(NSString *)meeting;
 @property (nonatomic, retain) NSString *room;
-
+@property (nonatomic, retain) NSString *meeting;
+- (void) setCounted:(NSString *)counted;
+@property (nonatomic, retain) NSString *counted;
 @end

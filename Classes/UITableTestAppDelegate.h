@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Square.h"
+
 
 @class UITableTestViewController;
-@class Square;
+
 
 @interface UITableTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

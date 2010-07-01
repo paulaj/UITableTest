@@ -8,15 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "Arrow.h"
+#import "LogoView.h"
+#import "LocationViewController.h"
 
 @class UITableTestMasterViewController;
 @class Arrow;
+@class LogoView;
 
 @interface UITableTestMasterViewController : UIViewController {
 
 }
 
-@property (nonatomic, retain) IBOutlet UIView *newView;
+
 -(void)moveLeft;
 -(void)moveRight;
 @end

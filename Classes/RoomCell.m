@@ -13,16 +13,18 @@
 
 
 @synthesize room;
-
+@synthesize meeting;
+@synthesize counted;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         
-        CGRect tzvFrame = CGRectMake(0.0, 0.0, 320, self.bounds.size.height);
+		CGRect tzvFrame = CGRectMake(0.0, 0.0, 320, self.contentView.bounds.size.height);
 		
         roomCellView = [[RoomCellView alloc] initWithFrame:tzvFrame];
         roomCellView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        [self addSubview:roomCellView];
+        [self.contentView addSubview:roomCellView];
+		
     }
     return self;
 }
@@ -31,7 +33,19 @@
     
     [roomCellView setRoom:newRoom];
 }
-
+- (void)setMeeting:(NSString *)newMeeting {
+    
+    [roomCellView setMeeting:newMeeting];
+}
+- (void) setCounted:(NSString *)newCounted {
+    [roomCellView setCounted:newCounted];
+}
+//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+//
+//    [super setSelected:selected animated:animated];
+//
+//    // Configure the view for the selected state
+//}
 - (void)dealloc {
     [super dealloc];
 }
