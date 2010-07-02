@@ -20,12 +20,12 @@
 	if (self = [super init]) {
 		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
 		//CGFloat viewWidth=CGRectGetWidth(frame);
-		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 300, 400) style:UITableViewStylePlain] autorelease];
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
 		
-		[self.view setBackgroundColor:[UIColor blackColor]];
+		[self.view setBackgroundColor:[UIColor whiteColor]];
 		
 		
 		self.locList = [NSMutableArray array];
@@ -36,26 +36,40 @@
 		[locList addObject:@"In Your Hair"];
 		[locList addObject:@"Fight a Bear"];
 		[locList addObject:@"With Your Chair"];
+		[locList addObject:@"Here"];
+		[locList addObject:@"There"];
+		[locList addObject:@"Everywhere"];
+		[locList addObject:@"Underwear"];
+		[locList addObject:@"In Your Hair"];
+		[locList addObject:@"Fight a Bear"];
+		[locList addObject:@"With Your Chair"];
 		//NSLog(@":%@", self.locList);
-		
+	
 		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-		label.backgroundColor = [UIColor clearColor];
+		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
 		label.font = [UIFont boldSystemFontOfSize:50];
 		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
 		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor redColor];
+		label.textColor = [UIColor whiteColor];
 		label.text = @"Locations";
 		UITableView *myTable = (UITableView *)self.view;
 		myTable.tableHeaderView = label;
-		
-		
-		
-		
-				//self.title = @"My Awesome Test Table";
+				
+		//self.title = NSLocalizedString(@"Locations", @"Locations title");	
+		//self.title = @"My Awesome Test Table";
 		//self.frame=CGRectMake(0, 0, 100, 500);
 		//self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 		//self.tableView.rowHeight = ROW_HEIGHT;
        // self.nameList = [NSMutableArray array];
+		
+		
+		// Add the custom title bar label
+		//self.navigationItem.titleView = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 4.0f, 320.0f, 36.0f)];
+		//[(UILabel *)self.navigationItem.titleView setText:@"Font Families"];
+		//[(UILabel *)self.navigationItem.titleView setBackgroundColor:[UIColor clearColor]];
+		//[(UILabel *)self.navigationItem.titleView setTextColor:[UIColor whiteColor]];
+		//[(UILabel *)self.navigationItem.titleView setTextAlignment:UITextAlignmentCenter];
+		//[(UILabel *)self.navigationItem.titleView setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
 	}
 	return self;
 }
@@ -64,7 +78,7 @@
 
 - (void)loadView {
     // allocate the subclassed UIView, and set it as the UIViewController's main view
-		
+	
 }
 
 /*

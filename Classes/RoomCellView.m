@@ -16,7 +16,7 @@
     if ((self = [super initWithFrame:frame])) {
         
         self.opaque = YES;
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -35,9 +35,9 @@
 - (void)setHighlighted:(BOOL)lit {
 	// If highlighted state changes, need to redisplay.
     if(lit) {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
     } else {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
     }
     
     [self setNeedsDisplay];    
@@ -53,7 +53,7 @@
 	NSString *countedPeople=[counted stringByAppendingString:@"    "];
 	NSString *numberPeople = [@"             \n\n# Attending:" stringByAppendingString: countedPeople];
 	
-	[[UIColor whiteColor] set];
+	[[UIColor blackColor] set];
     [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 	[numberPeople drawInRect:self.bounds withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentRight];
 	[meetings drawInRect:self.bounds withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];

@@ -21,12 +21,12 @@
 	if (self = [super init]) {
 		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
 		//CGFloat viewWidth=CGRectGetWidth(frame);
-		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 300, 400) style:UITableViewStylePlain] autorelease];
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
 		
-		[self.view setBackgroundColor:[UIColor blackColor]];
+		[self.view setBackgroundColor:[UIColor whiteColor]];
 		
 		
 		self.roomList = [NSMutableArray array];
@@ -57,12 +57,35 @@
 		[countedList addObject:@"0"];
 		[countedList addObject:@"5"];
 		
+		[roomList addObject:@"Queen's Garden"];
+		[roomList addObject:@"Chessboard Forest"];
+		[roomList addObject:@"Bizzare Room"];
+		[roomList addObject:@"Rabbit Hole"];
+		[roomList addObject:@"Mad Hatter's House"];
+		[roomList addObject:@"March Hare's House"];
+		[roomList addObject:@"CourtRoom"];
+		
+		[meetingList addObject:@"Very Important"];
+		[meetingList addObject:@"#120391"];
+		[meetingList addObject:@"#3.14159"];
+		[meetingList addObject:@"Dinner"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Trial"];
+		
+		[countedList addObject:@"16"];
+		[countedList addObject:@"55"];
+		[countedList addObject:@"1"];
+		[countedList addObject:@"27"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"5"];
 		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-		label.backgroundColor = [UIColor clearColor];
+		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
 		label.font = [UIFont boldSystemFontOfSize:50];
 		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
 		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor redColor];
+		label.textColor = [UIColor whiteColor];
 		label.text = @"Rooms";
 		UITableView *myTable = (UITableView *)self.view;
 		myTable.tableHeaderView = label;

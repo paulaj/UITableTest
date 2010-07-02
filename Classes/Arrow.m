@@ -16,6 +16,7 @@
 @class UITableTestMasterViewController;
  
 @synthesize directionOfChange;
+@synthesize disable;
 
 - (id)initWithFrame:(CGRect)frame withDirectionOfChange:(NSString *)directionOfChange withController:(UITableTestMasterViewController *)myController{
     if ((self = [super initWithFrame:(CGRect)frame])) {
@@ -23,7 +24,7 @@
 		self.frame = frame;
 		self.userInteractionEnabled=true;
 		controller=myController;
-	
+		disable=false;
 		
     }
 	return self;  
@@ -37,48 +38,53 @@
 	CGContextFillRect(ctx, CGRectMake(0,0, self.frame.size.width, self.frame.size.height));
 	CGFloat lineSize= self.frame.size.width/8.0;
 	CGContextSetLineWidth(ctx, lineSize);
+	if (disable==false) {
+		CGContextSetRGBStrokeColor(ctx, .7, .7, .7, 1);
+		CGContextSetRGBFillColor(ctx, 1, 1, 1, 1);
+		
+	}
 	
+	if (disable==true) {
+		CGContextSetRGBStrokeColor(ctx, .7, .7, .7, .05);
+		CGContextSetRGBFillColor(ctx, 1, 1, 1, .3);
+		
+	}
+
 	if (directionOfChange==@"Left") {
 		CGContextMoveToPoint(ctx, lineSize, self.frame.size.height/2.0);
 		CGContextAddLineToPoint(ctx, self.frame.size.width-lineSize, lineSize);
 		CGContextAddLineToPoint(ctx, self.frame.size.width-lineSize, self.frame.size.height-lineSize);
 		CGContextClosePath(ctx);
-		CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
-		CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
-		CGContextDrawPath(ctx, kCGPathFillStroke);
-		
-		
-		
+		CGContextDrawPath(ctx, kCGPathFillStroke);	
 		
 	}
-	else if (directionOfChange==@"Right") {
+	
+	
+	if (directionOfChange==@"Right") {
 		CGContextMoveToPoint(ctx, self.frame.size.width-lineSize, self.frame.size.height/2.0);
 		CGContextAddLineToPoint(ctx, lineSize,self.frame.size.height-lineSize);
 		CGContextAddLineToPoint(ctx, lineSize, lineSize);
 		CGContextClosePath(ctx);
-		CGContextSetStrokeColorWithColor(ctx, [UIColor redColor].CGColor);
-		CGContextSetFillColorWithColor(ctx, [UIColor whiteColor].CGColor);
 		CGContextDrawPath(ctx, kCGPathFillStroke);
-		
-	
-		
-		
 	}
-	
-
-	
+	NSLog(@"Calling DrawRect");
+	NSLog(@"disable?:%d:",disable);
+	[self setNeedsDisplay];
 	
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	if (directionOfChange==@"Left") {
+	if (directionOfChange==@"Left" & disable==false) {
 		NSLog(@"move left");
-		 [controller moveLeft];		
+		
+		[controller moveLeft];	
+		[self setNeedsDisplay];
 		
 	}
-	else if (directionOfChange==@"Right") {
+	else if (directionOfChange==@"Right" & disable==false) {
 		NSLog(@"move right");
 		[controller moveRight];
+		[self setNeedsDisplay];
 	
 	
 	}

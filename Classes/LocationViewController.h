@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LocationViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+@interface LocationViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>{
     NSMutableArray *locList;
 }
 

@@ -16,10 +16,15 @@
 @class LogoView;
 
 @interface UITableTestMasterViewController : UIViewController {
+	CGFloat pageChecker;
+	Arrow *arrowPicRight;
+	Arrow *arrowLocLeft;
+	Arrow *arrowLocRight;
+	Arrow *arrowRoomLeft;
 
 }
 
-
+-(void)checkArrowsWithPage:(CGFloat)pageCheck;
 -(void)moveLeft;
 -(void)moveRight;
 @end

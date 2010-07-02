@@ -12,9 +12,10 @@
 @interface Arrow : UIView {
 	NSString *directionOfChange;
 	UITableTestMasterViewController *controller; 
+	bool disable;
 
 }
 - (id)initWithFrame:(CGRect)frame withDirectionOfChange:(NSString *)directionOfChange withController:(UITableTestMasterViewController *)controller;
 @property (nonatomic, retain) NSString *directionOfChange ;
-
+@property (nonatomic, assign) bool disable;
 @end

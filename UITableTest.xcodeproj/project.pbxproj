@@ -17,7 +17,6 @@
 		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
 		DAE8796211DBDCDB003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8796111DBDCDB003C2721 /* Arrow.m */; };
 		DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8799C11DCD91E003C2721 /* LogoView.m */; };
-		DAE879AB11DCD9B0003C2721 /* With_Elements_edit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */; };
 		DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879C411DCDE0C003C2721 /* LocationViewController.m */; };
 		DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879CF11DCDFF0003C2721 /* LocationCell.m */; };
 		DAE879D311DCE004003C2721 /* LocationCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879D211DCE004003C2721 /* LocationCellView.m */; };
@@ -45,7 +44,6 @@
 		DAE8796111DBDCDB003C2721 /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
 		DAE8798D11DCD8ED003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
 		DAE8799C11DCD91E003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
-		DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = With_Elements_edit.jpg; sourceTree = "<group>"; };
 		DAE879C411DCDE0C003C2721 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		DAE879C611DCDE13003C2721 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		DAE879CE11DCDFE7003C2721 /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				DAE8796011DBDCDB003C2721 /* Arrow.h */,
 				DAE8796111DBDCDB003C2721 /* Arrow.m */,
 				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
-				DAE879AA11DCD9B0003C2721 /* With_Elements_edit.jpg */,
 				DAE87ABA11DCF16D003C2721 /* RoomCell.h */,
 				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
 				DAE87ABC11DCF17F003C2721 /* RoomCellView.h */,
@@ -198,7 +195,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */,
-				DAE879AB11DCD9B0003C2721 /* With_Elements_edit.jpg in Resources */,
 				DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
