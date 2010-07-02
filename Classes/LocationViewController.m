@@ -20,7 +20,7 @@
 	if (self = [super init]) {
 		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
 		//CGFloat viewWidth=CGRectGetWidth(frame);
-		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStylePlain] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
@@ -45,16 +45,10 @@
 		[locList addObject:@"With Your Chair"];
 		//NSLog(@":%@", self.locList);
 	
-		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
-		label.font = [UIFont boldSystemFontOfSize:50];
-		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor whiteColor];
-		label.text = @"Locations";
 		UITableView *myTable = (UITableView *)self.view;
-		myTable.tableHeaderView = label;
+		
 				
+		
 		//self.title = NSLocalizedString(@"Locations", @"Locations title");	
 		//self.title = @"My Awesome Test Table";
 		//self.frame=CGRectMake(0, 0, 100, 500);
@@ -80,7 +74,11 @@
     // allocate the subclassed UIView, and set it as the UIViewController's main view
 	
 }
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 
+{
+	return @"Locations";
+}
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
