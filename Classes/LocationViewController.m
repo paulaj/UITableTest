@@ -20,12 +20,12 @@
 	if (self = [super init]) {
 		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
 		//CGFloat viewWidth=CGRectGetWidth(frame);
-		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStylePlain] autorelease];
+		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
 		
-		[self.view setBackgroundColor:[UIColor whiteColor]];
+		[self.view setBackgroundColor:[UIColor clearColor]];
 		
 		
 		self.locList = [NSMutableArray array];
@@ -45,25 +45,9 @@
 		[locList addObject:@"With Your Chair"];
 		//NSLog(@":%@", self.locList);
 	
-		UITableView *myTable = (UITableView *)self.view;
 		
 				
 		
-		//self.title = NSLocalizedString(@"Locations", @"Locations title");	
-		//self.title = @"My Awesome Test Table";
-		//self.frame=CGRectMake(0, 0, 100, 500);
-		//self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-		//self.tableView.rowHeight = ROW_HEIGHT;
-       // self.nameList = [NSMutableArray array];
-		
-		
-		// Add the custom title bar label
-		//self.navigationItem.titleView = [[UILabel alloc]initWithFrame:CGRectMake(0.0f, 4.0f, 320.0f, 36.0f)];
-		//[(UILabel *)self.navigationItem.titleView setText:@"Font Families"];
-		//[(UILabel *)self.navigationItem.titleView setBackgroundColor:[UIColor clearColor]];
-		//[(UILabel *)self.navigationItem.titleView setTextColor:[UIColor whiteColor]];
-		//[(UILabel *)self.navigationItem.titleView setTextAlignment:UITextAlignmentCenter];
-		//[(UILabel *)self.navigationItem.titleView setFont:[UIFont boldSystemFontOfSize:[UIFont systemFontSize]]];
 	}
 	return self;
 }
@@ -74,11 +58,11 @@
     // allocate the subclassed UIView, and set it as the UIViewController's main view
 	
 }
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-
-{
-	return @"Locations";
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//
+//{
+//	return @"Locations";
+//}
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {

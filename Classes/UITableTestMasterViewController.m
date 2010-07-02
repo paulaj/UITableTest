@@ -12,6 +12,7 @@
 #import "LogoView.h"
 #import "LocationViewController.h"
 #import "RoomViewController.h"
+#import "headerView.h"
 
 @implementation UITableTestMasterViewController
 
@@ -53,15 +54,17 @@
 	
 	LocationViewController *locViewController = [[[LocationViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
 	RoomViewController *roomViewController = [[[RoomViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
-		
-    CGRect bounds = CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) -2, self.view.frame.size.height/2.0-(locSizeY/2.0)-2, locSizeX+4,locSizeY+4);
+	HeaderView *headerLocation =[[[HeaderView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Locations"] retain];
+	HeaderView *headerRoom =[[[HeaderView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"] retain];
+	
+    CGRect bounds = CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) -2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64);
 	UIView *borderView = [[UIView alloc] initWithFrame:bounds];
 	[borderView setBackgroundColor:[UIColor grayColor]];
 	[self.view addSubview:borderView];
 	[self.view addSubview:picView];
 	[borderView release];
 	
-	CGRect bounds2 = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-2, locSizeX+4,locSizeY+4);
+	CGRect bounds2 = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64);
 	UIView *border2View = [[UIView alloc] initWithFrame:bounds2];
 	[border2View setBackgroundColor:[UIColor grayColor]];
 	[self.view addSubview:border2View];
@@ -76,7 +79,8 @@
 	[self.view addSubview:picView];
 	[self.view addSubview:locViewController.view];
 	[self.view addSubview:roomViewController.view];
-	
+	[self.view addSubview:headerLocation];
+	[self.view addSubview:headerRoom];
 	[self checkArrowsWithPage:pageChecker];
 	[self.view setNeedsDisplay];
 	

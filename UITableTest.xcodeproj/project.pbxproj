@@ -24,6 +24,7 @@
 		DAE87AC111DCF17F003C2721 /* RoomCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABD11DCF17F003C2721 /* RoomCellView.m */; };
 		DAE87AC211DCF17F003C2721 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABF11DCF17F003C2721 /* RoomViewController.m */; };
 		DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */; };
+		DAE87DBC11DE7A43003C2721 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87DBB11DE7A43003C2721 /* HeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		DAE87ABE11DCF17F003C2721 /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
 		DAE87ABF11DCF17F003C2721 /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
 		DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_can_phone.jpg; sourceTree = "<group>"; };
+		DAE87DBA11DE7A43003C2721 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		DAE87DBB11DE7A43003C2721 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,8 @@
 				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
 				DAE87ABC11DCF17F003C2721 /* RoomCellView.h */,
 				DAE87ABD11DCF17F003C2721 /* RoomCellView.m */,
+				DAE87DBA11DE7A43003C2721 /* HeaderView.h */,
+				DAE87DBB11DE7A43003C2721 /* HeaderView.m */,
 				DAE87ABE11DCF17F003C2721 /* RoomViewController.h */,
 				DAE87ABF11DCF17F003C2721 /* RoomViewController.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -217,6 +222,7 @@
 				DAE87AC011DCF17F003C2721 /* RoomCell.m in Sources */,
 				DAE87AC111DCF17F003C2721 /* RoomCellView.m in Sources */,
 				DAE87AC211DCF17F003C2721 /* RoomViewController.m in Sources */,
+				DAE87DBC11DE7A43003C2721 /* HeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
 		
-		[self.view setBackgroundColor:[UIColor whiteColor]];
+		[self.view setBackgroundColor:[UIColor clearColor]];
 		
 		
 		self.roomList = [NSMutableArray array];
@@ -80,15 +80,15 @@
 		[countedList addObject:@"0"];
 		[countedList addObject:@"0"];
 		[countedList addObject:@"5"];
-		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
-		label.font = [UIFont boldSystemFontOfSize:50];
-		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-		label.textAlignment = UITextAlignmentCenter;
-		label.textColor = [UIColor whiteColor];
-		label.text = @"Rooms";
-		UITableView *myTable = (UITableView *)self.view;
-		myTable.tableHeaderView = label;
+		//UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
+//		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
+//		label.font = [UIFont boldSystemFontOfSize:50];
+//		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+//		label.textAlignment = UITextAlignmentCenter;
+//		label.textColor = [UIColor whiteColor];
+//		label.text = @"Rooms";
+//		UITableView *myTable = (UITableView *)self.view;
+//		myTable.tableHeaderView = label;
 		
 			
 		
