@@ -49,7 +49,7 @@
 - (void)drawRect:(CGRect)rect {
 	NSString *string = room ;
 	
-	NSString *meetings = [@"        \n\nMeeting:" stringByAppendingString:meeting];
+	NSString *meetings = [@"        \n\n  Meeting:" stringByAppendingString:meeting];
 	NSString *countedPeople=[counted stringByAppendingString:@"    "];
 	NSString *numberPeople = [@"             \n\n# Attending:" stringByAppendingString: countedPeople];
 	

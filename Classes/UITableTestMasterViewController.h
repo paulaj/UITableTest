@@ -21,10 +21,12 @@
 	Arrow *arrowLocLeft;
 	Arrow *arrowLocRight;
 	Arrow *arrowRoomLeft;
-
+	CGFloat beginPoint;
+	CGFloat endPoint;
+	CGFloat currentPoint;
 }
 
 -(void)checkArrowsWithPage:(CGFloat)pageCheck;
--(void)moveLeft;
+-(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end;
 -(void)moveRight;
 @end
