@@ -125,7 +125,7 @@
 	
 	if ( ( (begin-end) <-40) && pageChecker>0) {
 		NSLog(@"case 1");
-		NSLog(@"PageChecker:%d",pageChecker);
+		//NSLog(@"PageChecker:%d",pageChecker);
 		if(pageChecker==1){
 			//self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
 			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
@@ -138,7 +138,7 @@
 	}
 	else if (((begin-end) >40) && pageChecker<2) {
 		NSLog(@"case 2");
-		NSLog(@"PageChecker:%d",pageChecker);
+		//NSLog(@"PageChecker:%d",pageChecker);
 		//self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
 		if(pageChecker==1){
 			
@@ -173,7 +173,7 @@
 	UITouch *touch = [[event allTouches] anyObject];
 	
 	CGPoint currentTouch= [touch locationInView:self.view];
-	
+	CGPoint currentTouchSuper= [touch locationInView:self.view];
 	currentPoint=currentTouch.x;
 	
 	
@@ -182,11 +182,11 @@
 	[UIView setAnimationDuration:0.005f];
 	
 			
-	if((self.view.center.x+(currentPoint-beginPoint)<601) && (self.view.center.x+(currentPoint-beginPoint)>-601)){
+	if((self.view.center.x+(currentPoint-beginPoint)<1601) && (self.view.center.x+(currentPoint-beginPoint)>-800)){
 		 self.view.center=CGPointMake(self.view.center.x+(currentPoint-beginPoint),self.view.center.y);
 		
 	}
-	NSLog(@"moving:%f",currentPoint-beginPoint);
+	NSLog(@"where am I?:%f", currentPoint);
 	[self.view setNeedsDisplay];	
 	[UIView setAnimationDelegate:self.view];
 	
@@ -197,9 +197,10 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *touch = [[event allTouches] anyObject];
     CGPoint endTouch = [touch locationInView:self.view.superview];
+	
 	endPoint=endTouch.x;
 	[self moveWithBegin:beginPointSuper withEnd:endPoint];
-	NSLog(@"difference:%f",endPoint-beginPointSuper);
+	//NSLog(@"difference:%f",endPoint-beginPointSuper);
 	NSLog(@"I've ended");
 	
 	
