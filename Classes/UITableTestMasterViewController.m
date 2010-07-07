@@ -8,7 +8,7 @@
 
 #import "UITableTestMasterViewController.h"
 #import "UITableTestAppDelegate.h"
-#import "Arrow.h"
+
 #import "LogoView.h"
 #import "LocationViewController.h"
 #import "RoomViewController.h"
@@ -29,12 +29,23 @@
  
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+	
 	pageChecker=0;
 	
 	
+	//myScrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0,0, 1800.0, 700.0)];
+	//myScrollView.contentSize=CGSizeMake(758,320);
+	//[myScrollView addSubview:self.view];
+	
+	//self.view=myScrollView;
+    //[myScrollView release];
 	self.view= [[UIView alloc] initWithFrame:CGRectMake(0,0, 1800.0, 700.0) ];
 	self.view.center= CGPointMake(768/2.0+600, 1024/2.0);
-
+	
+	
+	
+	
+	
 	CGFloat arrowSize= self.view.frame.size.width/30.0;
 	CGFloat arrowSpace=self.view.frame.size.width/8.50;
 	CGFloat picSize= self.view.frame.size.width/4.0;
@@ -75,12 +86,12 @@
 	
 	
 	
-	NSString *instructions =@"Swipe To Continue";
-    [[UIColor whiteColor] set];
-    [instructions drawInRect:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize) , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,locSizeY+64) 
-					withFont:[UIFont systemFontOfSize:50] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
-	[instructions drawInRect:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) ,self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY , locSizeX+4,locSizeY+64) 
-					withFont:[UIFont systemFontOfSize:50] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
+	//NSString *instructions =@"Swipe To Continue";
+//    [[UIColor whiteColor] set];
+//    [instructions drawInRect:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize) , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,locSizeY+64) 
+//					withFont:[UIFont systemFontOfSize:50] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
+//	[instructions drawInRect:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) ,self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY , locSizeX+4,locSizeY+64) 
+//					withFont:[UIFont systemFontOfSize:50] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
 	
 
 	
@@ -94,38 +105,51 @@
 	[self.view addSubview:headerRoom];
 
 	[self.view setNeedsDisplay];
+	NSLog(@"PageChecker:%d",pageChecker);
+	
+	
+	
 	
 	
 	
 }
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end{
+	//CGPoint start=CGPointMake(768/2.0+600, 1024/2.0);
+	//if (self.view.center==start) {
+	//	pageChecker=0;
+	//}
+	
 	[UIView beginAnimations:@"move_to_Left" context:NULL];
 	
 	[UIView setAnimationDuration:1.0f];
 	
-	if ( ( (begin-end) <-50) && pageChecker>0) {
-		//if(pageChecker=1){
-			self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
-		//	self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
-		//}
-		//if(pageChecker=2){
-		//	self.view.center=CGPointMake(768/2.0, 1024/2.0);
-		//}	
-			pageChecker=pageChecker-1;
-	
+	if ( ( (begin-end) <-40) && pageChecker>0) {
+		NSLog(@"case 1");
+		NSLog(@"PageChecker:%d",pageChecker);
+		if(pageChecker==1){
+			//self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
+			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
+		}
+		if(pageChecker==2){
+			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+		}	
+		pageChecker=pageChecker-1;
+		NSLog(@"PageChecker:%d",pageChecker);
 	}
-	if (((begin-end) >50) && pageChecker<2) {
-		
-		self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
-		//if(pageChecker=1){
+	else if (((begin-end) >40) && pageChecker<2) {
+		NSLog(@"case 2");
+		NSLog(@"PageChecker:%d",pageChecker);
+		//self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
+		if(pageChecker==1){
 			
-		//	self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
-		//}
-		//if(pageChecker=0){
-		//	self.view.center=CGPointMake(768/2.0, 1024/2.0);
-		//}	
+			self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
+		}
+		if(pageChecker==0){
+			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+		}	
 		
 		pageChecker=pageChecker+1;
+		NSLog(@"PageChecker:%d",pageChecker);
 	}
 	
 	[self.view setNeedsDisplay];	
@@ -135,36 +159,34 @@
 	
 }	
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-	NSLog(@"I got a touch");
+
 	UITouch *touch = [[event allTouches] anyObject];
 	CGPoint beginTouch = [touch locationInView:self.view];
+	CGPoint beginTouchSuper = [touch locationInView:self.view.superview];
 	beginPoint=beginTouch.x;
+	beginPointSuper=beginTouchSuper.x;
 	
 	
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *touch = [[event allTouches] anyObject];
+	
 	CGPoint currentTouch= [touch locationInView:self.view];
+	
 	currentPoint=currentTouch.x;
-	NSLog(@"I'm moving");
+	
 	
 	[UIView beginAnimations:@"move" context:NULL];
 	
-	[UIView setAnimationDuration:.5f];
+	[UIView setAnimationDuration:0.005f];
 	
-	//if ((begin-end) <0) {
+			
+	if((self.view.center.x+(currentPoint-beginPoint)<601) && (self.view.center.x+(currentPoint-beginPoint)>-601)){
+		 self.view.center=CGPointMake(self.view.center.x+(currentPoint-beginPoint),self.view.center.y);
 		
-	//self.view.center=CGPointMake(self.view.center.x+(currentPoint-beginPoint),self.view.center.y);
-		
-		
-	//}
-	//if ((begin-end) >0) {
-		
-	//	self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
-		
-	//}
-	
+	}
+	NSLog(@"moving:%f",currentPoint-beginPoint);
 	[self.view setNeedsDisplay];	
 	[UIView setAnimationDelegate:self.view];
 	
@@ -174,10 +196,10 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *touch = [[event allTouches] anyObject];
-    CGPoint endTouch = [touch locationInView:self.view];
+    CGPoint endTouch = [touch locationInView:self.view.superview];
 	endPoint=endTouch.x;
-	[self moveWithBegin:beginPoint withEnd:endPoint];
-	
+	[self moveWithBegin:beginPointSuper withEnd:endPoint];
+	NSLog(@"difference:%f",endPoint-beginPointSuper);
 	NSLog(@"I've ended");
 	
 	
@@ -210,6 +232,7 @@
 
 
 - (void)dealloc {
+	[myScrollView release];
     [self.view release];
     [super dealloc];
 }

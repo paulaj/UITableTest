@@ -12,10 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* UITableTestViewController.xib */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
-		DAE8796211DBDCDB003C2721 /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8796111DBDCDB003C2721 /* Arrow.m */; };
 		DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8799C11DCD91E003C2721 /* LogoView.m */; };
 		DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879C411DCDE0C003C2721 /* LocationViewController.m */; };
 		DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879CF11DCDFF0003C2721 /* LocationCell.m */; };
@@ -34,15 +31,11 @@
 		1D6058910D05DD3D006BFB54 /* UITableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* UITableTestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UITableTestViewController.xib; sourceTree = "<group>"; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* UITableTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTest_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UITableTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UITableTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestMasterViewController.h; sourceTree = "<group>"; };
 		DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestMasterViewController.m; sourceTree = "<group>"; };
-		DAE8796011DBDCDB003C2721 /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
-		DAE8796111DBDCDB003C2721 /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
 		DAE8798D11DCD8ED003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
 		DAE8799C11DCD91E003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
 		DAE879C411DCDE0C003C2721 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
@@ -91,8 +84,6 @@
 				DAE879D211DCE004003C2721 /* LocationCellView.m */,
 				DAE8798D11DCD8ED003C2721 /* LogoView.h */,
 				DAE8799C11DCD91E003C2721 /* LogoView.m */,
-				DAE8796011DBDCDB003C2721 /* Arrow.h */,
-				DAE8796111DBDCDB003C2721 /* Arrow.m */,
 				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
 				DAE87ABA11DCF16D003C2721 /* RoomCell.h */,
 				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
@@ -139,8 +130,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2899E5210DE3E06400AC0155 /* UITableTestViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* UITableTest-Info.plist */,
 			);
 			name = Resources;
@@ -198,8 +187,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				2899E5220DE3E06400AC0155 /* UITableTestViewController.xib in Resources */,
 				DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,7 +201,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* UITableTestAppDelegate.m in Sources */,
 				DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */,
-				DAE8796211DBDCDB003C2721 /* Arrow.m in Sources */,
 				DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */,
 				DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */,
 				DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */,

@@ -149,7 +149,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
-    NSLog(@"Got tableView call");
+   
     
     static NSString *CellIdentifier = @"RoomCell";
     
