@@ -114,50 +114,107 @@
 	
 }
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end{
-	//CGPoint start=CGPointMake(768/2.0+600, 1024/2.0);
-	//if (self.view.center==start) {
-	//	pageChecker=0;
-	//}
 	
 	[UIView beginAnimations:@"move_to_Left" context:NULL];
+	[UIView setAnimationDuration:.50f];
 	
-	[UIView setAnimationDuration:1.0f];
 	
-	if ( ( (begin-end) <-40) && pageChecker>0) {
-		NSLog(@"case 1");
-		//NSLog(@"PageChecker:%d",pageChecker);
-		if(pageChecker==1){
-			//self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
-			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
-		}
-		if(pageChecker==2){
-			self.view.center=CGPointMake(768/2.0, 1024/2.0);
-		}	
-		pageChecker=pageChecker-1;
-		NSLog(@"PageChecker:%d",pageChecker);
-	}
-	else if (((begin-end) >40) && pageChecker<2) {
-		NSLog(@"case 2");
-		//NSLog(@"PageChecker:%d",pageChecker);
-		//self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
-		if(pageChecker==1){
-			
+	//At zero, you have two options.
+	//Either your a large enough stroke to the right and become page one
+	//or you remain page zero
+	if(pageChecker==0){
+		if( (begin-end)>600){
 			self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
+			pageChecker=2;
 		}
-		if(pageChecker==0){
+		else if( (begin-end)>80){
 			self.view.center=CGPointMake(768/2.0, 1024/2.0);
-		}	
+			pageChecker=1;
+		}
+		else{
+			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
+			pageChecker=0;
+		}
+	}
 		
-		pageChecker=pageChecker+1;
-		NSLog(@"PageChecker:%d",pageChecker);
+		
+	//At one you have three choices
+	//You're either left and large enough, right and large enough,
+	//Or you just stay at one	
+	else if(pageChecker==1){
+		if ((begin-end)>80){
+			self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
+			pageChecker=2;
+		} 
+		else if ((begin-end)<-80){
+			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
+			pageChecker=0;
+		}
+		else{
+			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+			pageChecker=1;
+		}
 	}
 	
+	
+	
+	//At two, you have two options.
+	//Either your a large enough stroke to the left and become page one
+	//or you remain page two.
+	
+	else if (pageChecker==2){
+		if( (begin-end) <-600){
+			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
+			pageChecker=0;
+		}
+		else if( (begin-end) <-80){
+			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+			pageChecker=1;
+		}
+		else{
+			self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
+			pageChecker=2;
+		}
+		
+	
+	}
+	NSLog(@"PageChecker:%d",pageChecker);
 	[self.view setNeedsDisplay];	
 	[UIView setAnimationDelegate:self.view];
 	
 	[UIView commitAnimations];
+}
+
 	
-}	
+	//
+//	if ( ( (begin-end) <-40) && pageChecker>0) {
+//		NSLog(@"case 1");
+//		//NSLog(@"PageChecker:%d",pageChecker);
+//		if(pageChecker==1){
+//			//self.view.center=CGPointMake(self.view.center.x+600,self.view.center.y);
+//			self.view.center=CGPointMake(768/2.0+600, 1024/2.0);
+//		}
+//		if(pageChecker==2){
+//			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+//		}	
+//		pageChecker=pageChecker-1;
+//		NSLog(@"PageChecker:%d",pageChecker);
+//	}
+//	else if (((begin-end) >40) && pageChecker<2) {
+//		NSLog(@"case 2");
+//		//NSLog(@"PageChecker:%d",pageChecker);
+//		//self.view.center=CGPointMake(self.view.center.x-600,self.view.center.y);
+//		if(pageChecker==1){
+//			
+//			self.view.center=CGPointMake(768/2.0-600, 1024/2.0);
+//		}
+//		if(pageChecker==0){
+//			self.view.center=CGPointMake(768/2.0, 1024/2.0);
+//		}	
+//		
+//		pageChecker=pageChecker+1;
+	
+	
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
 	UITouch *touch = [[event allTouches] anyObject];
@@ -173,7 +230,7 @@
 	UITouch *touch = [[event allTouches] anyObject];
 	
 	CGPoint currentTouch= [touch locationInView:self.view];
-	CGPoint currentTouchSuper= [touch locationInView:self.view];
+	
 	currentPoint=currentTouch.x;
 	
 	
