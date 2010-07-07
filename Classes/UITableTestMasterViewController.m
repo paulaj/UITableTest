@@ -8,7 +8,7 @@
 
 #import "UITableTestMasterViewController.h"
 #import "UITableTestAppDelegate.h"
-
+#import "ContinueButton.h"
 #import "LogoView.h"
 #import "LocationViewController.h"
 #import "RoomViewController.h"
@@ -21,7 +21,7 @@
 	
 	pageChecker=0;//keeps track of page
 	
-	self.view= [[UIView alloc] initWithFrame:CGRectMake(0,0, 1800.0, 700.0) ];
+	self.view= [[UIView alloc] initWithFrame:CGRectMake(0,0, 2000.0, 700.0) ];
 	self.view.center= CGPointMake(768/2.0+600, 1024/2.0);
 	
 	
@@ -38,19 +38,20 @@
 	
 	//Elements for our view
 	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"tin_can_phone.jpg"] 
-											  withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize) , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize)] retain];
+											  withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize)] retain];
 	
 	LocationViewController *locViewController = [[[LocationViewController alloc] 
 			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
 	RoomViewController *roomViewController = [[[RoomViewController alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
+			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
 	
-	
+	ContinueButton *continueButton=[[[ContinueButton alloc] 
+									 initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0)) , self.view.frame.size.height/2.0-50, 160, 100)] retain];
 	//Headers
 	HeaderView *headerLocation =[[[HeaderView alloc] 
 			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Locations"] retain];
 	HeaderView *headerRoom =[[[HeaderView alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"] retain];
+			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"] retain];
 	
     
 	
@@ -63,7 +64,7 @@
 	
 	
 	UIView *border2View = [[UIView alloc] initWithFrame:
-						   CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSize)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
+						   CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
 	[border2View setBackgroundColor:[UIColor grayColor]];
 	[self.view addSubview:border2View];
 	[border2View release];
@@ -71,7 +72,7 @@
 	
 
 	//Instruction text
-	UILabel *picInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+20 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,100)];
+	UILabel *picInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize+20 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,100)];
 	picInstructions.text = @"Please Swipe \nTo Continue.";
 	picInstructions.numberOfLines = 0;
 	picInstructions.textAlignment = UITextAlignmentCenter;
@@ -95,6 +96,7 @@
 	[self.view addSubview:picView];
 	[self.view addSubview:locViewController.view];
 	[self.view addSubview:roomViewController.view];
+	[self.view addSubview:continueButton];
 	[self.view addSubview:headerLocation];
 	[self.view addSubview:headerRoom];
 
