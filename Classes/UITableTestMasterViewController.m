@@ -8,7 +8,6 @@
 
 #import "UITableTestMasterViewController.h"
 #import "UITableTestAppDelegate.h"
-#import "ContinueButton.h"
 #import "LogoView.h"
 #import "LocationViewController.h"
 #import "RoomViewController.h"
@@ -45,19 +44,22 @@
 	RoomViewController *roomViewController = [[[RoomViewController alloc] 
 			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
 	
-	//ContinueButton *continueButton=[[[ContinueButton alloc] 
-									// initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0)) , self.view.frame.size.height/2.0-50, 160, 100)] retain];
+	
+	
 	
 	
 	UIButton *roundedButtonType = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
 	roundedButtonType.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20 , self.view.frame.size.height/2.0-48, 125, 75);
 	roundedButtonType.backgroundColor = [UIColor clearColor];
 	[roundedButtonType setTitle:@"Login" forState: UIControlStateNormal];
-	//[roundedButtonType setTitleColor:[UIColor blueColor] forState: UIControlStateNormal];
 	[roundedButtonType setFont:[UIFont boldSystemFontOfSize:30.0f]];
 	[roundedButtonType addTarget:self action:@selector(infoButtonPressed:)forControlEvents:UIControlEventTouchUpInside];
 	roundedButtonType.adjustsImageWhenDisabled = YES;
 	[roundedButtonType setEnabled: NO];
+	//[roundedButtonType setTitleColor:[UIColor blueColor] forState: UIControlStateNormal];
+	
+	
+	
 	
 	//Headers
 	HeaderView *headerLocation =[[[HeaderView alloc] 
@@ -108,13 +110,11 @@
 	[self.view addSubview:picView];
 	[self.view addSubview:locViewController.view];
 	[self.view addSubview:roomViewController.view];
-	//[self.view addSubview:continueButton];
 	[self.view addSubview:roundedButtonType];
 	[self.view addSubview:headerLocation];
 	[self.view addSubview:headerRoom];
 
 	[self.view setNeedsDisplay];
-	//NSLog(@"PageChecker:%d",pageChecker);
 	
 	
 }
@@ -178,7 +178,7 @@
 		
 	
 	}
-	//NSLog(@"PageChecker:%d",pageChecker);
+
 	[self.view setNeedsDisplay];	
 	[UIView setAnimationDelegate:self.view];
 	[UIView commitAnimations];

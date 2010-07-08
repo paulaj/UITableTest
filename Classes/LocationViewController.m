@@ -98,7 +98,7 @@
 							   duration:(NSTimeInterval)duration {
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"Chosen Location:%@", [locList objectAtIndex:indexPath.row]);
+	NSLog(@"Location:%@ \n", [locList objectAtIndex:indexPath.row]);
     
 	
 	

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContinueButton.h"
 #import "LogoView.h"
 #import "LocationViewController.h"
 
