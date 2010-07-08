@@ -22,7 +22,8 @@
 	
 	self.view= [[UIView alloc] initWithFrame:CGRectMake(0,0, 2000.0, 700.0) ];
 	self.view.center= CGPointMake(768/2.0+600, 1024/2.0);
-	
+	chosenRoom=NULL;
+	chosenLocation=NULL;
 	
 	
 	
@@ -37,18 +38,18 @@
 	
 	//Elements for our view
 	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"tin_can_phone.jpg"] 
-											  withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize)] retain];
+											  withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize) ] retain];
 	
 	LocationViewController *locViewController = [[[LocationViewController alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
+			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] retain];
 	RoomViewController *roomViewController = [[[RoomViewController alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY)] retain];
+											   initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] retain];
 	
 	
 	
 	
 	
-	UIButton *roundedButtonType = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+	roundedButtonType = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
 	roundedButtonType.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20 , self.view.frame.size.height/2.0-48, 125, 75);
 	roundedButtonType.backgroundColor = [UIColor clearColor];
 	[roundedButtonType setTitle:@"Login" forState: UIControlStateNormal];
@@ -113,7 +114,7 @@
 	[self.view addSubview:roundedButtonType];
 	[self.view addSubview:headerLocation];
 	[self.view addSubview:headerRoom];
-
+	
 	[self.view setNeedsDisplay];
 	
 	
@@ -125,7 +126,18 @@
 	NSLog(@"I have been pressed");
 }
 
-
+-(void)ChooseLocationWithLocation:(NSString *)loc{
+	chosenLocation= loc;
+	if(chosenRoom!=NULL){
+		[roundedButtonType setEnabled: YES];
+	}	
+}		
+-(void)ChooseRoomWithRoom:(NSString *)room{
+	chosenRoom= room;
+	if(chosenLocation!=NULL){
+		[roundedButtonType setEnabled: YES];
+	}	
+}		
 //Decides what movement to take based on our current location (pageChecker) and the size and direction of our stroke (begin-end)
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end{
 	

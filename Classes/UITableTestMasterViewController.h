@@ -21,11 +21,13 @@
 	CGFloat beginPoint;
 	CGFloat endPoint;
 	CGFloat currentPoint;
-	UIScrollView *myScrollView;
+	UIButton *roundedButtonType;
+	NSString *chosenLocation;
+	NSString *chosenRoom;
 }
 
--(void)checkArrowsWithPage:(CGFloat)pageCheck;
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end;
 -(void)infoButtonPressed:(id)sender;
-
+-(void)ChooseLocationWithLocation:(NSString *)loc;
+-(void)ChooseRoomWithRoom:(NSString *)room;
 @end

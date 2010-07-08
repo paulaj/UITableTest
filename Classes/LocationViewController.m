@@ -11,12 +11,13 @@
 #import "UITableTestMasterViewController.h"
 
 @implementation LocationViewController
-
+@class UITableTestMasterViewController;
 @synthesize locList;
+
 
 #define ROW_HEIGHT 60
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame withController:(UITableTestMasterViewController *)control{
 	if (self = [super init]) {
 		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
 		//CGFloat viewWidth=CGRectGetWidth(frame);
@@ -44,7 +45,8 @@
 		[locList addObject:@"Fight a Bear"];
 		[locList addObject:@"With Your Chair"];
 		//NSLog(@":%@", self.locList);
-	
+		
+		controller=control;
 		
 				
 		
@@ -99,7 +101,7 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSLog(@"Location:%@ \n", [locList objectAtIndex:indexPath.row]);
-    
+    [controller ChooseLocationWithLocation:[locList objectAtIndex:indexPath.row]];
 	
 	
     
@@ -116,8 +118,6 @@
 	
 	// Release any cached data, images, etc that aren't in use.
 }
-
-
 
 
 

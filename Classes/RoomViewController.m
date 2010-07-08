@@ -8,6 +8,7 @@
 
 #import "RoomViewController.h"
 #import "RoomCell.h"
+#import "UITableTestMasterViewController.h"
 
 
 @implementation RoomViewController
@@ -17,9 +18,9 @@
 @synthesize countedList;
 #define ROW_HEIGHT 60
 
-- (id)initWithFrame:(CGRect)frame {
+- (id)initWithFrame:(CGRect)frame withController:(UITableTestMasterViewController *)control{
 	if (self = [super init]) {
-		
+		controller=control;
 		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
@@ -90,7 +91,6 @@
 }
 
 
-
 // Override to allow orientations other than the default portrait orientation.
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -112,9 +112,6 @@
 	
 	// Release any cached data, images, etc that aren't in use.
 }
-
-
-
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -158,7 +155,7 @@
 			NSLog(@"This room contains The %@ Meeting and has %@ members.", [meetingList objectAtIndex:indexPath.row], [countedList objectAtIndex:indexPath.row]); 
 		}
     
-	
+		 [controller ChooseRoomWithRoom:[roomList objectAtIndex:indexPath.row]];
 	
     
 }

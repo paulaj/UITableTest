@@ -15,6 +15,7 @@
 @interface UITableTestAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     UITableTestViewController *viewController;
+	
 
 	
 	
