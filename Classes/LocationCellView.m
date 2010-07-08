@@ -17,6 +17,7 @@
         
         self.opaque = YES;
         self.backgroundColor = [UIColor clearColor];
+		//self.userInteractionEnabled=true;
     }
     return self;
 }
@@ -38,7 +39,19 @@
     [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
 
-
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//		
+//	NSLog(@"Chosen Location:%@", loc);
+//	
+//	
+//}
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//}
+//
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//	
+//	
+//}
 - (void)dealloc {
     [super dealloc];
 }

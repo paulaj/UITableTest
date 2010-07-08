@@ -19,8 +19,7 @@
 
 - (id)initWithFrame:(CGRect)frame {
 	if (self = [super init]) {
-		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
-		//CGFloat viewWidth=CGRectGetWidth(frame);
+		
 		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
 		
 		[(UITableView *)self.view setDelegate:self];
@@ -32,30 +31,6 @@
 		self.roomList = [NSMutableArray array];
 		self.meetingList = [NSMutableArray array];
 		self.countedList = [NSMutableArray array];
-		//[countedList addObject:@"Drew"];
-		[roomList addObject:@"Queen's Garden"];
-		[roomList addObject:@"Chessboard Forest"];
-		[roomList addObject:@"Bizzare Room"];
-		[roomList addObject:@"Rabbit Hole"];
-		[roomList addObject:@"Mad Hatter's House"];
-		[roomList addObject:@"March Hare's House"];
-		[roomList addObject:@"CourtRoom"];
-		
-		[meetingList addObject:@"Very Important"];
-		[meetingList addObject:@"#120391"];
-		[meetingList addObject:@"#3.14159"];
-		[meetingList addObject:@"Dinner"];
-		[meetingList addObject:@"Empty"];
-		[meetingList addObject:@"Empty"];
-		[meetingList addObject:@"Trial"];
-		
-		[countedList addObject:@"16"];
-		[countedList addObject:@"55"];
-		[countedList addObject:@"1"];
-		[countedList addObject:@"27"];
-		[countedList addObject:@"0"];
-		[countedList addObject:@"0"];
-		[countedList addObject:@"5"];
 		
 		[roomList addObject:@"Queen's Garden"];
 		[roomList addObject:@"Chessboard Forest"];
@@ -80,23 +55,30 @@
 		[countedList addObject:@"0"];
 		[countedList addObject:@"0"];
 		[countedList addObject:@"5"];
-		//UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 50)] autorelease];
-//		label.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
-//		label.font = [UIFont boldSystemFontOfSize:50];
-//		label.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-//		label.textAlignment = UITextAlignmentCenter;
-//		label.textColor = [UIColor whiteColor];
-//		label.text = @"Rooms";
-//		UITableView *myTable = (UITableView *)self.view;
-//		myTable.tableHeaderView = label;
 		
-			
+		[roomList addObject:@"Queen's Garden"];
+		[roomList addObject:@"Chessboard Forest"];
+		[roomList addObject:@"Bizzare Room"];
+		[roomList addObject:@"Rabbit Hole"];
+		[roomList addObject:@"Mad Hatter's House"];
+		[roomList addObject:@"March Hare's House"];
+		[roomList addObject:@"CourtRoom"];
 		
-		//self.title = @"My Awesome Test Table";
-		//self.frame=CGRectMake(0, 0, 100, 500);
-		//self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-		//self.tableView.rowHeight = ROW_HEIGHT;
-		// self.countedList = [NSMutableArray array];
+		[meetingList addObject:@"Very Important"];
+		[meetingList addObject:@"#120391"];
+		[meetingList addObject:@"#3.14159"];
+		[meetingList addObject:@"Dinner"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Empty"];
+		[meetingList addObject:@"Trial"];
+		
+		[countedList addObject:@"16"];
+		[countedList addObject:@"55"];
+		[countedList addObject:@"1"];
+		[countedList addObject:@"27"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"0"];
+		[countedList addObject:@"5"];
 	}
 	return self;
 }
@@ -118,9 +100,7 @@
 (UIInterfaceOrientation)orientation
 							   duration:(NSTimeInterval)duration {
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic -- create and push a new view controller
-}
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -168,6 +148,19 @@
 	testCell.counted = counted;
  	
     return testCell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"You have selected the %@" , [roomList objectAtIndex:indexPath.row]);
+		if ([[meetingList objectAtIndex:indexPath.row] isEqualToString:@"Empty"]){
+			NSLog(@"This room is available.");
+		}
+		else {
+			NSLog(@"This room contains The %@ Meeting and has %@ members.", [meetingList objectAtIndex:indexPath.row], [countedList objectAtIndex:indexPath.row]); 
+		}
+    
+	
+	
+    
 }
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.

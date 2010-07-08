@@ -17,6 +17,8 @@
         
         self.opaque = YES;
         self.backgroundColor = [UIColor clearColor];
+		//self.userInteractionEnabled=true;
+
     }
     return self;
 }
@@ -31,21 +33,19 @@
 - (void) setCounted:(NSString *)newCounted {
     counted = newCounted;
 }
-
 - (void)setHighlighted:(BOOL)lit {
 	// If highlighted state changes, need to redisplay.
     if(lit) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blueColor];
     } else {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blackColor];
     }
     
     [self setNeedsDisplay];    
 }
 
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+
 - (void)drawRect:(CGRect)rect {
 	NSString *string = room ;
 	
@@ -59,7 +59,25 @@
 	[meetings drawInRect:self.bounds withFont:[UIFont systemFontOfSize:12] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
 
-
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//	
+//	NSLog(@"Chosen Room:%@", room);
+//	if (room!=@"Empty"){
+//	NSLog(@"This Room Contains The %@  Meeting and Has %@ Members", room, counted);
+//	}
+//	else {
+//		NSLog(@"This Room is available.");
+//	}
+//	
+//	
+//}
+//-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
+//}
+//
+//-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
+//	
+//	
+//}
 - (void)dealloc {
     [super dealloc];
 }

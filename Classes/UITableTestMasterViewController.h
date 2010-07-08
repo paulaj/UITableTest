@@ -27,6 +27,6 @@
 
 -(void)checkArrowsWithPage:(CGFloat)pageCheck;
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end;
-
+-(void)infoButtonPressed:(id)sender;
 
 @end

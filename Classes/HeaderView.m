@@ -16,15 +16,7 @@
     if ((self = [super initWithFrame:frame])) {
 		self.frame=frame;
 		label=title;
-		//UILabel *newLabel = [[UILabel alloc] autorelease];
-//		newLabel.backgroundColor = [UIColor colorWithRed:0 green:.3 blue:.8 alpha:1];
-//		newLabel.font = [UIFont boldSystemFontOfSize:50];
-//		newLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.8];
-//		newLabel.textAlignment = UITextAlignmentCenter;
-//		newLabel.textColor = [UIColor whiteColor];
-//		newLabel.text = label;
-//							 
-//		[self addSubview:newLabel];
+
     }
     return self;
 }

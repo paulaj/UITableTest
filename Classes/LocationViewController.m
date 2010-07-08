@@ -98,8 +98,13 @@
 							   duration:(NSTimeInterval)duration {
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic -- create and push a new view controller
+	NSLog(@"Chosen Location:%@", [locList objectAtIndex:indexPath.row]);
+    
+	
+	
+    
 }
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
    [super viewDidLoad];

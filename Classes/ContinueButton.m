@@ -34,9 +34,8 @@
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetRGBFillColor(ctx, 0, 0, 0, 1);
 	CGContextFillRect(ctx, CGRectMake(0,0, self.frame.size.width, self.frame.size.height));
-	//CGFloat lineSize= self.frame.size.width/8.0;
-	//CGContextSetLineWidth(ctx, lineSize);
-	 	
+
+	//Triangle 	
 	CGContextSetRGBFillColor(ctx, 0, .3, .8, 1);
 	CGContextMoveToPoint(ctx, self.frame.size.width, self.frame.size.height/2.0);
 	CGContextAddLineToPoint(ctx, self.frame.size.width/4.0,self.frame.size.height+100);
@@ -45,6 +44,7 @@
 	CGContextDrawPath(ctx, kCGPathFillStroke);
 	
 	
+	//Rectangle with text
 	NSString *message =@"Continue\nTo User\n Selection";
 	CGContextFillRect(ctx, CGRectMake(0,0, 3.0*self.frame.size.width/4.0, self.frame.size.height));
 	[[UIColor whiteColor] set];

@@ -15,7 +15,7 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-        
+       
         CGRect tzvFrame = CGRectMake(0.0, 0.0, 320, self.contentView.bounds.size.height);
 
         locCellView = [[LocationCellView alloc] initWithFrame:tzvFrame];
@@ -37,6 +37,7 @@
 //
 //    // Configure the view for the selected state
 //}
+
 
 
 - (void)dealloc {
