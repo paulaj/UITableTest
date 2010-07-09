@@ -59,7 +59,19 @@
 	[roundedButtonType setEnabled: NO];
 	//[roundedButtonType setTitleColor:[UIColor blueColor] forState: UIControlStateNormal];
 	
-	
+	if( roundedButtonType.enabled==NO){
+		UILabel *loginInstructions = [[UILabel alloc]
+									  initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20,  self.view.frame.size.height/2.0+25, 125,200)];
+		loginInstructions.text = @"Have not chosen \n a Location \nAND\n a Room";
+		loginInstructions.numberOfLines = 0;
+		loginInstructions.textAlignment = UITextAlignmentCenter;
+		loginInstructions.textColor = [UIColor redColor];
+		loginInstructions.backgroundColor = [UIColor clearColor];
+		loginInstructions.font = [UIFont boldSystemFontOfSize:20.0f];
+		[self.view addSubview:loginInstructions];
+		[loginInstructions release];
+		
+	}
 	
 	
 	//Headers
@@ -87,8 +99,8 @@
 	
 
 	//Instruction text
-	UILabel *picInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize+20 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,100)];
-	picInstructions.text = @"Please Swipe \nTo Continue.";
+	UILabel *picInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize+20 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+50, locSizeX+4,100)];
+	picInstructions.text = @"Slide -->";
 	picInstructions.numberOfLines = 0;
 	picInstructions.textAlignment = UITextAlignmentCenter;
 	picInstructions.textColor = [UIColor whiteColor];
@@ -97,8 +109,8 @@
 	[self.view addSubview:picInstructions];
 	[picInstructions release];
 	
-	UILabel *locInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)+15, self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,100)];
-	locInstructions.text = @"Please Swipe \nTo Continue.";
+	UILabel *locInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+50, locSizeX+4,100)];
+	locInstructions.text = @"Slide -->";
 	locInstructions.numberOfLines = 0;
 	locInstructions.textAlignment = UITextAlignmentCenter;
 	locInstructions.textColor = [UIColor whiteColor];
@@ -106,6 +118,47 @@
 	locInstructions.font = [UIFont boldSystemFontOfSize:30.0f];
 	[self.view addSubview:locInstructions];
 	[locInstructions release];
+	
+	UILabel *loc2Instructions = [[UILabel alloc] 
+								  initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)];
+	loc2Instructions.numberOfLines = 0;
+	loc2Instructions.text = @"Choose Your Physical Location.";
+	loc2Instructions.textAlignment = UITextAlignmentCenter;
+	loc2Instructions.textColor = [UIColor whiteColor];
+	loc2Instructions.backgroundColor = [UIColor blackColor];
+	loc2Instructions.font = [UIFont boldSystemFontOfSize:20.0f];
+	[self.view addSubview:loc2Instructions];
+	
+	UILabel *room2Instructions = [[UILabel alloc] 
+								  initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)];
+	room2Instructions.numberOfLines = 0;
+	room2Instructions.text = @"Choose A Virtual Room.";
+	room2Instructions.textAlignment = UITextAlignmentCenter;
+	room2Instructions.textColor = [UIColor whiteColor];
+	room2Instructions.backgroundColor = [UIColor blackColor];
+	room2Instructions.font = [UIFont boldSystemFontOfSize:20.0f];
+	[self.view addSubview:room2Instructions];
+	[room2Instructions release];
+	//
+//	UILabel *loc2Instructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)-4.0*(self.view.frame.size.height/2.0-(locSizeY/2.0)-60), locSizeX+4,75)];
+//	loc2Instructions.text = @"Choose Location";
+//	loc2Instructions.numberOfLines = 0;
+//	loc2Instructions.textAlignment = UITextAlignmentCenter;
+//	loc2Instructions.textColor = [UIColor whiteColor];
+//	loc2Instructions.backgroundColor = [UIColor clearColor];
+//	loc2Instructions.font = [UIFont boldSystemFontOfSize:30.0f];
+//	[self.view addSubview:loc2Instructions];
+//	[loc2Instructions release];
+//	
+//	UILabel *roomInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)-4.0*(self.view.frame.size.height/2.0-(locSizeY/2.0)-60), locSizeX+4,75)];
+//	roomInstructions.text = @"Choose Room";
+//	roomInstructions.numberOfLines = 0;
+//	roomInstructions.textAlignment = UITextAlignmentCenter;
+//	roomInstructions.textColor = [UIColor whiteColor];
+//	roomInstructions.backgroundColor = [UIColor clearColor];
+//	roomInstructions.font = [UIFont boldSystemFontOfSize:30.0f];
+//	[self.view addSubview:roomInstructions];
+//	[roomInstructions release];
 	
 	[self.view setBackgroundColor:[UIColor blackColor]]; 
 	[self.view addSubview:picView];
@@ -122,21 +175,114 @@
 
 -(void)infoButtonPressed:(id)sender{
 	
-	
 	NSLog(@"I have been pressed");
 }
 
 -(void)ChooseLocationWithLocation:(NSString *)loc{
+	CGFloat arrowSpace=self.view.frame.size.width/8.50;
+	CGFloat arrowSize= self.view.frame.size.width/30.0;
+	CGFloat locSizeX=400.0;
+	CGFloat locSizeY=500.0;
+	
 	chosenLocation= loc;
+	
+	//UILabel *loc2Instructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)-4.0*(self.view.frame.size.height/2.0-(locSizeY/2.0)-60), locSizeX+4,75)];
+//	loc2Instructions.text = [@"Location: " stringByAppendingString:loc];
+//	loc2Instructions.numberOfLines = 0;
+//	loc2Instructions.textAlignment = UITextAlignmentCenter;
+//	loc2Instructions.textColor = [UIColor whiteColor];
+//	loc2Instructions.backgroundColor = [UIColor blackColor];
+//	loc2Instructions.font = [UIFont boldSystemFontOfSize:30.0f];
+//	[self.view addSubview:loc2Instructions];
+//	[loc2Instructions release];
+	
+	
+	UILabel *loginInstructions = [[UILabel alloc]
+								  initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20,  self.view.frame.size.height/2.0+25, 125,200)];
+	loginInstructions.numberOfLines = 0;
+	loginInstructions.textAlignment = UITextAlignmentCenter;
+	loginInstructions.textColor = [UIColor redColor];
+	loginInstructions.backgroundColor = [UIColor blackColor];
+	loginInstructions.font = [UIFont boldSystemFontOfSize:20.0f];
+	[self.view addSubview:loginInstructions];
+	
+	NSLog(@"Location:%@ \n", loc);
 	if(chosenRoom!=NULL){
 		[roundedButtonType setEnabled: YES];
-	}	
+		loginInstructions.text = @" ";
+	}
+	else{
+		loginInstructions.text = @"Have not choosen \n a Room";
+	}
+	
+	[loginInstructions release];
 }		
--(void)ChooseRoomWithRoom:(NSString *)room{
+-(void)ChooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted{
+	CGFloat arrowSpace=self.view.frame.size.width/8.50;
+	CGFloat arrowSize= self.view.frame.size.width/30.0;
+	CGFloat locSizeX=400.0;
+	CGFloat locSizeY=500.0;
+	
+	
+	
+	
 	chosenRoom= room;
+	
+	
+	//UILabel *roomInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)-4.0*(self.view.frame.size.height/2.0-(locSizeY/2.0)-60), locSizeX+4,75)];
+//	roomInstructions.text = [@"Room: " stringByAppendingString:room];
+//	roomInstructions.numberOfLines = 0;
+//	roomInstructions.textAlignment = UITextAlignmentCenter;
+//	roomInstructions.textColor = [UIColor whiteColor];
+//	roomInstructions.backgroundColor = [UIColor blackColor];
+//	roomInstructions.font = [UIFont boldSystemFontOfSize:30.0f];
+//	[self.view addSubview:roomInstructions];
+//	[roomInstructions release];
+	
+	
+	
+//	UILabel *room2Instructions = [[UILabel alloc] 
+//								  initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,100)];
+//	room2Instructions.numberOfLines = 0;
+//	room2Instructions.textAlignment = UITextAlignmentCenter;
+//	room2Instructions.textColor = [UIColor whiteColor];
+//	room2Instructions.backgroundColor = [UIColor blackColor];
+//	room2Instructions.font = [UIFont boldSystemFontOfSize:20.0f];
+//	[self.view addSubview:room2Instructions];
+	
+	
+	UILabel *loginInstructions = [[UILabel alloc]
+								  initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20,  self.view.frame.size.height/2.0+25, 125,200)];
+	loginInstructions.numberOfLines = 0;
+	loginInstructions.textAlignment = UITextAlignmentCenter;
+	loginInstructions.textColor = [UIColor redColor];
+	loginInstructions.backgroundColor = [UIColor blackColor];
+	loginInstructions.font = [UIFont boldSystemFontOfSize:20.0f];
+	[self.view addSubview:loginInstructions];
+	
+	
+	if ([meeting isEqualToString:@"Empty"]){
+		//room2Instructions.text = @"This room is available.";
+	}
+	else {
+		//room2Instructions.text = [[[[@"This room contains The " stringByAppendingString:meeting] stringByAppendingString:@" Meeting and has "] stringByAppendingString:counted] stringByAppendingString:@" members." ]; 
+	}
+	
+	
+	
+	
 	if(chosenLocation!=NULL){
 		[roundedButtonType setEnabled: YES];
-	}	
+		loginInstructions.text = @" ";
+	}
+	else{
+		loginInstructions.text = @"Have not chosen \n a Location";
+	}
+	
+	
+	
+	[loginInstructions release];
+	
 }		
 //Decides what movement to take based on our current location (pageChecker) and the size and direction of our stroke (begin-end)
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end{

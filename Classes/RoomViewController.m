@@ -147,15 +147,9 @@
     return testCell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"You have selected the %@" , [roomList objectAtIndex:indexPath.row]);
-		if ([[meetingList objectAtIndex:indexPath.row] isEqualToString:@"Empty"]){
-			NSLog(@"This room is available.");
-		}
-		else {
-			NSLog(@"This room contains The %@ Meeting and has %@ members.", [meetingList objectAtIndex:indexPath.row], [countedList objectAtIndex:indexPath.row]); 
-		}
+
     
-		 [controller ChooseRoomWithRoom:[roomList objectAtIndex:indexPath.row]];
+		 [controller ChooseRoomWithRoom:[roomList objectAtIndex:indexPath.row] withMeeting:[meetingList objectAtIndex:indexPath.row] withCount:[countedList objectAtIndex:indexPath.row]];
 	
     
 }

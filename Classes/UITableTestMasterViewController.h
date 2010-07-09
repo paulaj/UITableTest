@@ -29,5 +29,5 @@
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end;
 -(void)infoButtonPressed:(id)sender;
 -(void)ChooseLocationWithLocation:(NSString *)loc;
--(void)ChooseRoomWithRoom:(NSString *)room;
+-(void)ChooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted;
 @end
