@@ -1,6 +1,6 @@
 //
 //  LocationViewController.m
-//  UITableTest
+//  Login
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright MIT Media Lab 2010. All rights reserved.
@@ -8,27 +8,30 @@
 
 #import "LocationViewController.h"
 #import "LocationCell.h"
-#import "UITableTestMasterViewController.h"
+#import "LoginMasterViewController.h"
 
 @implementation LocationViewController
-@class UITableTestMasterViewController;
+
+@class LoginMasterViewController;
 @synthesize locList;
 
 
 #define ROW_HEIGHT 60
 
-- (id)initWithFrame:(CGRect)frame withController:(UITableTestMasterViewController *)control{
+- (id)initWithFrame:(CGRect)frame withController:(LoginMasterViewController *)control{
 	if (self = [super init]) {
-		//self.view = [[[UITableView alloc] initWithFrame:frame style:UITableViewStylePlain] autorelease];
-		//CGFloat viewWidth=CGRectGetWidth(frame);
+		
 		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
+		[self.view setBackgroundColor:[UIColor clearColor]];
 		
 		[(UITableView *)self.view setDelegate:self];
 		[(UITableView *)self.view setDataSource:self];
 		
-		[self.view setBackgroundColor:[UIColor clearColor]];
+		
+		controller=control;
 		
 		
+		//fills our List of Possible Locations
 		self.locList = [NSMutableArray array];
 		[locList addObject:@"Here"];
 		[locList addObject:@"There"];
@@ -44,11 +47,7 @@
 		[locList addObject:@"In Your Hair"];
 		[locList addObject:@"Fight a Bear"];
 		[locList addObject:@"With Your Chair"];
-		//NSLog(@":%@", self.locList);
 		
-		controller=control;
-		
-				
 		
 	}
 	return self;
@@ -57,55 +56,60 @@
 
 
 - (void)loadView {
-    // allocate the subclassed UIView, and set it as the UIViewController's main view
-	
+    // allocate the subclassed UIView, and set it as the UIViewController's main view	
 }
+
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
--(void)willRotateToInterfaceOrientation:
-(UIInterfaceOrientation)orientation
-							   duration:(NSTimeInterval)duration {
+
+
+
+-(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
 }
+
+
+//Sends information to MasterViewController
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
     [controller ChooseLocationWithLocation:[locList objectAtIndex:indexPath.row]];
-	
-	
-    
+  
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+
 - (void)viewDidLoad {
    [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
+
+
+- (void)didReceiveMemoryWarning {	
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 
 
+
+// There is only one section.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	// There is only one section.
 	return 1;
 }
+
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.locList count];
 }
 
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
     
-    //NSLog(@"Got tableView call");
-    
-    static NSString *CellIdentifier = @"UITableTestCell";
+    static NSString *CellIdentifier = @"LoginCell";
     
 	LocationCell *testCell = (LocationCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -119,10 +123,11 @@
  	
     return testCell;
 }
+
+
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
+
 
 - (void)dealloc {
     [super dealloc];

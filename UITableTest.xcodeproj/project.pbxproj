@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* UITableTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* LoginAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* LoginAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */; };
+		DAE8754C11DA91EB003C2721 /* LoginMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8754B11DA91EB003C2721 /* LoginMasterViewController.m */; };
 		DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE8799C11DCD91E003C2721 /* LogoView.m */; };
 		DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879C411DCDE0C003C2721 /* LocationViewController.m */; };
 		DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE879CF11DCDFF0003C2721 /* LocationCell.m */; };
@@ -22,20 +22,24 @@
 		DAE87AC211DCF17F003C2721 /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87ABF11DCF17F003C2721 /* RoomViewController.m */; };
 		DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */; };
 		DAE87DBC11DE7A43003C2721 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87DBB11DE7A43003C2721 /* HeaderView.m */; };
+		DAFC717611E79160001C1FB7 /* rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFC717511E79160001C1FB7 /* rightarrow.png */; };
+		DAFC718511E795BE001C1FB7 /* ltgray.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAFC718411E795BE001C1FB7 /* ltgray.gif */; };
+		DAFC71EC11E7ABC6001C1FB7 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */; };
+		DAFC725811E7CA47001C1FB7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFC725711E7CA47001C1FB7 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* UITableTestAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestAppDelegate.m; sourceTree = "<group>"; };
+		1D3623240D0F684500981E51 /* LoginAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* LoginAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* UITableTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITableTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* UITableTest_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTest_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UITableTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UITableTest-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableTestMasterViewController.h; sourceTree = "<group>"; };
-		DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableTestMasterViewController.m; sourceTree = "<group>"; };
+		DAE8754A11DA91EB003C2721 /* LoginMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginMasterViewController.h; sourceTree = "<group>"; };
+		DAE8754B11DA91EB003C2721 /* LoginMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginMasterViewController.m; sourceTree = "<group>"; };
 		DAE8798D11DCD8ED003C2721 /* LogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogoView.h; sourceTree = "<group>"; };
 		DAE8799C11DCD91E003C2721 /* LogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogoView.m; sourceTree = "<group>"; };
 		DAE879C411DCDE0C003C2721 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
@@ -53,6 +57,10 @@
 		DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_can_phone.jpg; sourceTree = "<group>"; };
 		DAE87DBA11DE7A43003C2721 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		DAE87DBB11DE7A43003C2721 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		DAFC717511E79160001C1FB7 /* rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarrow.png; sourceTree = SOURCE_ROOT; };
+		DAFC718411E795BE001C1FB7 /* ltgray.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ltgray.gif; sourceTree = SOURCE_ROOT; };
+		DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = SOURCE_ROOT; };
+		DAFC725711E7CA47001C1FB7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,10 +80,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				DAE8754A11DA91EB003C2721 /* UITableTestMasterViewController.h */,
-				DAE8754B11DA91EB003C2721 /* UITableTestMasterViewController.m */,
-				1D3623240D0F684500981E51 /* UITableTestAppDelegate.h */,
-				1D3623250D0F684500981E51 /* UITableTestAppDelegate.m */,
+				DAE8754A11DA91EB003C2721 /* LoginMasterViewController.h */,
+				DAE8754B11DA91EB003C2721 /* LoginMasterViewController.m */,
+				1D3623240D0F684500981E51 /* LoginAppDelegate.h */,
+				1D3623250D0F684500981E51 /* LoginAppDelegate.m */,
 				DAE879C611DCDE13003C2721 /* LocationViewController.h */,
 				DAE879C411DCDE0C003C2721 /* LocationViewController.m */,
 				DAE879CE11DCDFE7003C2721 /* LocationCell.h */,
@@ -84,7 +92,7 @@
 				DAE879D211DCE004003C2721 /* LocationCellView.m */,
 				DAE8798D11DCD8ED003C2721 /* LogoView.h */,
 				DAE8799C11DCD91E003C2721 /* LogoView.m */,
-				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
+				DAFC71FD11E7B4B6001C1FB7 /* Pics */,
 				DAE87ABA11DCF16D003C2721 /* RoomCell.h */,
 				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
 				DAE87ABC11DCF17F003C2721 /* RoomCellView.h */,
@@ -109,6 +117,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DAFC725711E7CA47001C1FB7 /* MainWindow.xib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -143,6 +152,17 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAFC71FD11E7B4B6001C1FB7 /* Pics */ = {
+			isa = PBXGroup;
+			children = (
+				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
+				DAFC717511E79160001C1FB7 /* rightarrow.png */,
+				DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */,
+				DAFC718411E795BE001C1FB7 /* ltgray.gif */,
+			);
+			name = Pics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */,
+				DAFC717611E79160001C1FB7 /* rightarrow.png in Resources */,
+				DAFC718511E795BE001C1FB7 /* ltgray.gif in Resources */,
+				DAFC71EC11E7ABC6001C1FB7 /* greyButton.png in Resources */,
+				DAFC725811E7CA47001C1FB7 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,8 +223,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* UITableTestAppDelegate.m in Sources */,
-				DAE8754C11DA91EB003C2721 /* UITableTestMasterViewController.m in Sources */,
+				1D3623260D0F684500981E51 /* LoginAppDelegate.m in Sources */,
+				DAE8754C11DA91EB003C2721 /* LoginMasterViewController.m in Sources */,
 				DAE8799D11DCD91E003C2721 /* LogoView.m in Sources */,
 				DAE879C511DCDE0C003C2721 /* LocationViewController.m in Sources */,
 				DAE879D011DCDFF0003C2721 /* LocationCell.m in Sources */,

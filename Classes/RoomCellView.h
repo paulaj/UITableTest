@@ -1,6 +1,6 @@
 //
 //  RoomCellView.h
-//  UITableTest
+//  Login
 //
 //  Created by Paula Jacobs on 6/30/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.

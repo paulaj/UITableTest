@@ -1,19 +1,25 @@
 //
 //  LocationViewController.h
-//  UITableTest
+//  Login
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright MIT Media Lab 2010. All rights reserved.
 //
-#import "UITableTestMasterViewController.h"
+#import "LoginMasterViewController.h"
 #import <UIKit/UIKit.h>
-@class UITableTestMasterViewController;
+
+
+@class LoginMasterViewController;
+
+
 @interface LocationViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>{
+	
     NSMutableArray *locList;
-	UITableTestMasterViewController *controller;
+	LoginMasterViewController *controller;
+	
 }
 
-- (id)initWithFrame:(CGRect)frame withController:(UITableTestMasterViewController *)control;
+- (id)initWithFrame:(CGRect)frame withController:(LoginMasterViewController *)control;
 @property (nonatomic, retain) NSMutableArray *locList;
 
 @end

@@ -1,6 +1,6 @@
 //
 //  HeaderView.m
-//  UITableTest
+//  Login
 //
 //  Created by Paula Jacobs on 7/2/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.
@@ -21,6 +21,7 @@
     return self;
 }
 
+//Creates our custom header
 - (void)drawRect:(CGRect)rect {
 	
 	CGContextRef ctx = UIGraphicsGetCurrentContext();

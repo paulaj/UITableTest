@@ -1,6 +1,6 @@
 //
 //  LocationCell.m
-//  UITableTest
+//  Login
 //
 //  Created by Drew Harry on 6/18/10.
 //  Copyright 2010 MIT Media Lab. All rights reserved.
@@ -26,17 +26,16 @@
     return self;
 }
 
+
+
+
+//Setter for Location
 - (void)setLoc:(NSString *)newLoc {
     
     [locCellView setLoc:newLoc];
 }
 
-//- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-//
-//    [super setSelected:selected animated:animated];
-//
-//    // Configure the view for the selected state
-//}
+
 
 
 

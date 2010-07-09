@@ -1,4 +1,4 @@
-    //
+
 //  RoomViewController2.m
 //  Room
 //
@@ -8,7 +8,7 @@
 
 #import "RoomViewController.h"
 #import "RoomCell.h"
-#import "UITableTestMasterViewController.h"
+#import "LoginMasterViewController.h"
 
 
 @implementation RoomViewController
@@ -18,7 +18,7 @@
 @synthesize countedList;
 #define ROW_HEIGHT 60
 
-- (id)initWithFrame:(CGRect)frame withController:(UITableTestMasterViewController *)control{
+- (id)initWithFrame:(CGRect)frame withController:(LoginMasterViewController *)control{
 	if (self = [super init]) {
 		controller=control;
 		self.view = [[[UITableView alloc] initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), 400, 500) style:UITableViewStyleGrouped] autorelease];
@@ -91,42 +91,55 @@
 }
 
 
-// Override to allow orientations other than the default portrait orientation.
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
--(void)willRotateToInterfaceOrientation:
-(UIInterfaceOrientation)orientation
-							   duration:(NSTimeInterval)duration {
+
+
+-(void)willRotateToInterfaceOrientation: (UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
 }
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	[controller ChooseRoomWithRoom:[roomList objectAtIndex:indexPath.row] withMeeting:[meetingList objectAtIndex:indexPath.row] withCount:[countedList objectAtIndex:indexPath.row]];	
+} 
+
+
+
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 }
 
+
+
+
 - (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
 }
 
 
+
+
+// There is only one section.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	// There is only one section.
 	return 1;
 }
+
+
+
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.roomList count];
 }
 
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
-    
-   
     
     static NSString *CellIdentifier = @"RoomCell";
     
@@ -146,17 +159,16 @@
  	
     return testCell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    
-		 [controller ChooseRoomWithRoom:[roomList objectAtIndex:indexPath.row] withMeeting:[meetingList objectAtIndex:indexPath.row] withCount:[countedList objectAtIndex:indexPath.row]];
-	
-    
-}
+
+
+
+
+
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
 }
+
+
 
 - (void)dealloc {
     [super dealloc];
