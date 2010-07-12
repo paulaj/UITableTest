@@ -74,16 +74,16 @@
 
 	//Initializes Login Button
 	loginButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
-	loginButton.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20 , self.view.frame.size.height/2.0-48, 125, 75);
-	loginButton.backgroundColor = [UIColor blackColor];
+	loginButton.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+35 , self.view.frame.size.height/2.0-48, 90, 75);
+	loginButton.backgroundColor = [UIColor clearColor];
 	[loginButton setTitle:@"Login" forState: UIControlStateNormal];
 	[loginButton setFont:[UIFont boldSystemFontOfSize:30.0f]];
 	[loginButton addTarget:self action:@selector(infoButtonPressed:)forControlEvents:UIControlEventTouchUpInside];
 	[loginButton setEnabled: NO];
 	
 	//Disabled Settings for Login Button
-	[loginButton setTitleColor:[UIColor grayColor] forState: UIControlStateDisabled];
-	[loginButton setBackgroundImage:[UIImage imageNamed:@"greyButton.png"] forState:UIControlStateDisabled];
+	
+	[loginButton setBackgroundImage:[UIImage imageNamed:@"greyButton-1.png"] forState:UIControlStateDisabled];
 	loginButton.adjustsImageWhenDisabled = YES;
 	if( loginButton.enabled==NO){
 		

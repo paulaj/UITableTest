@@ -23,9 +23,8 @@
 		DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */; };
 		DAE87DBC11DE7A43003C2721 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE87DBB11DE7A43003C2721 /* HeaderView.m */; };
 		DAFC717611E79160001C1FB7 /* rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFC717511E79160001C1FB7 /* rightarrow.png */; };
-		DAFC718511E795BE001C1FB7 /* ltgray.gif in Resources */ = {isa = PBXBuildFile; fileRef = DAFC718411E795BE001C1FB7 /* ltgray.gif */; };
-		DAFC71EC11E7ABC6001C1FB7 /* greyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */; };
 		DAFC725811E7CA47001C1FB7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFC725711E7CA47001C1FB7 /* MainWindow.xib */; };
+		DAFC72C011EB63E8001C1FB7 /* greyButton-1.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFC72BF11EB63E8001C1FB7 /* greyButton-1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,9 +57,8 @@
 		DAE87DBA11DE7A43003C2721 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		DAE87DBB11DE7A43003C2721 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		DAFC717511E79160001C1FB7 /* rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarrow.png; sourceTree = SOURCE_ROOT; };
-		DAFC718411E795BE001C1FB7 /* ltgray.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ltgray.gif; sourceTree = SOURCE_ROOT; };
-		DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = greyButton.png; sourceTree = SOURCE_ROOT; };
 		DAFC725711E7CA47001C1FB7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		DAFC72BF11EB63E8001C1FB7 /* greyButton-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greyButton-1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,23 +82,23 @@
 				DAE8754B11DA91EB003C2721 /* LoginMasterViewController.m */,
 				1D3623240D0F684500981E51 /* LoginAppDelegate.h */,
 				1D3623250D0F684500981E51 /* LoginAppDelegate.m */,
-				DAE879C611DCDE13003C2721 /* LocationViewController.h */,
-				DAE879C411DCDE0C003C2721 /* LocationViewController.m */,
+				DAE87DBA11DE7A43003C2721 /* HeaderView.h */,
+				DAE87DBB11DE7A43003C2721 /* HeaderView.m */,
+				DAE8798D11DCD8ED003C2721 /* LogoView.h */,
+				DAE8799C11DCD91E003C2721 /* LogoView.m */,
 				DAE879CE11DCDFE7003C2721 /* LocationCell.h */,
 				DAE879CF11DCDFF0003C2721 /* LocationCell.m */,
 				DAE879D111DCDFFD003C2721 /* LocationCellView.h */,
 				DAE879D211DCE004003C2721 /* LocationCellView.m */,
-				DAE8798D11DCD8ED003C2721 /* LogoView.h */,
-				DAE8799C11DCD91E003C2721 /* LogoView.m */,
-				DAFC71FD11E7B4B6001C1FB7 /* Pics */,
+				DAE879C611DCDE13003C2721 /* LocationViewController.h */,
+				DAE879C411DCDE0C003C2721 /* LocationViewController.m */,
 				DAE87ABA11DCF16D003C2721 /* RoomCell.h */,
 				DAE87ABB11DCF17F003C2721 /* RoomCell.m */,
 				DAE87ABC11DCF17F003C2721 /* RoomCellView.h */,
 				DAE87ABD11DCF17F003C2721 /* RoomCellView.m */,
-				DAE87DBA11DE7A43003C2721 /* HeaderView.h */,
-				DAE87DBB11DE7A43003C2721 /* HeaderView.m */,
 				DAE87ABE11DCF17F003C2721 /* RoomViewController.h */,
 				DAE87ABF11DCF17F003C2721 /* RoomViewController.m */,
+				DAFC71FD11E7B4B6001C1FB7 /* Pics */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 			);
 			path = Classes;
@@ -158,9 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				DAE87B4011DD0DEE003C2721 /* tin_can_phone.jpg */,
+				DAFC72BF11EB63E8001C1FB7 /* greyButton-1.png */,
 				DAFC717511E79160001C1FB7 /* rightarrow.png */,
-				DAFC71EB11E7ABC6001C1FB7 /* greyButton.png */,
-				DAFC718411E795BE001C1FB7 /* ltgray.gif */,
 			);
 			name = Pics;
 			sourceTree = "<group>";
@@ -209,9 +206,8 @@
 			files = (
 				DAE87B4111DD0DEE003C2721 /* tin_can_phone.jpg in Resources */,
 				DAFC717611E79160001C1FB7 /* rightarrow.png in Resources */,
-				DAFC718511E795BE001C1FB7 /* ltgray.gif in Resources */,
-				DAFC71EC11E7ABC6001C1FB7 /* greyButton.png in Resources */,
 				DAFC725811E7CA47001C1FB7 /* MainWindow.xib in Resources */,
+				DAFC72C011EB63E8001C1FB7 /* greyButton-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
