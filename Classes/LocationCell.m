@@ -27,17 +27,11 @@
 }
 
 
-
-
 //Setter for Location
 - (void)setLoc:(NSString *)newLoc {
     
     [locCellView setLoc:newLoc];
 }
-
-
-
-
 
 - (void)dealloc {
     [super dealloc];

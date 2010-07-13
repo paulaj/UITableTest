@@ -54,36 +54,22 @@
 }
 
 
-
-- (void)loadView {
-    // allocate the subclassed UIView, and set it as the UIViewController's main view	
-}
-
-
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
 
 
 
--(void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
-}
-
-
 //Sends information to MasterViewController
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-    [controller ChooseLocationWithLocation:[locList objectAtIndex:indexPath.row]];
+    [controller chooseLocationWithLocation:[locList objectAtIndex:indexPath.row]];
   
 }
-
-
 
 - (void)viewDidLoad {
    [super viewDidLoad];
 }
-
 
 
 - (void)didReceiveMemoryWarning {	
@@ -91,14 +77,10 @@
 }
 
 
-
-
 // There is only one section.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 1;
 }
-
-
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -122,10 +104,6 @@
 	testCell.loc = loc;
  	
     return testCell;
-}
-
-
-- (void)viewDidUnload {
 }
 
 

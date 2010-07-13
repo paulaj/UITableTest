@@ -17,27 +17,34 @@
 @class LogoView;
 
 @interface LoginMasterViewController : UIViewController {
+	// Tracks the area of the view the user sees
 	int currentPage;
 	
+	// These floats track the x coordinates of touches
 	CGFloat beginPointSuper;
 	CGFloat beginPoint;
 	CGFloat endPoint;
 	CGFloat currentPoint;
-	UIButton *roundedButtonType;
+	
+	// These track the user selections
 	NSString *chosenLocation;
 	NSString *chosenRoom;
+	
+	// Text to appear on screen
 	UILabel *loginInstructions;
 	UILabel *roomInstructions;
 	UILabel *locationInstructions;
 	UILabel *locationSlide;
 	UILabel *logoSlide;
 	UIButton *loginButton;
+	
+	
 	LocationViewController *locViewController;
 	RoomViewController *roomViewController;
 }
 
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end;
 -(void)infoButtonPressed:(id)sender;
--(void)ChooseLocationWithLocation:(NSString *)loc;
--(void)ChooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted;
+-(void)chooseLocationWithLocation:(NSString *)loc;
+-(void)chooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted;
 @end

@@ -17,23 +17,22 @@
 
 
 - (void)loadView {
-	//initializers 
+	// Initializers 
 	
-	//Sets the frame and then sets the center of the view to be at the location our our Logo.
-	//The currentPage variable tracks which part of the view the user is seeing
+	// Sets the frame and then sets the center of the view to be at the location our our Logo.
+	// The currentPage variable tracks which part of the view the user is seeing
 	self.view= [[UIView alloc] initWithFrame:CGRectMake(0,0, 2000.0, 700.0) ];
 	self.view.center= CGPointMake(768/2.0+600, 1024/2.0);
 	[self.view setBackgroundColor:[UIColor blackColor]]; 
 	currentPage=0;
 	
 	
-	//tracks user selections
+	// Tracks user selections
 	chosenRoom=NULL;
 	chosenLocation=NULL;
 	
 	
-	
-	//dimentions
+	// Dimentions
 	CGFloat arrowSize= self.view.frame.size.width/30.0;
 	CGFloat arrowSpace=self.view.frame.size.width/8.50;
 	CGFloat picSize= self.view.frame.size.width/4.0;
@@ -42,10 +41,7 @@
 	
 	
 	
-	
-	
-	
-	//Elements in the Login page (Our Logo, Our Location Table and Our Room Table)
+	// Elements in the Login page (Our Logo, Our Location Table and Our Room Table)
 	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"tin_can_phone.jpg"] 
 			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize) ] retain];
 	
@@ -54,25 +50,14 @@
 	roomViewController = [[[RoomViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] retain];
 	
 	
-	
-	
-	
-	
-	
-	//Arrows
+	// Arrows
 	LogoView *arrowView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"rightarrow.png"] 
 			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize +300 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50) ] retain];
 	LogoView *arrowView2= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"rightarrow.png"] 
 			withFrame: CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)+270 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50) ] retain];
-	
-	
-	
-	
-	
-	
-	
 
-	//Initializes Login Button
+
+	// Initializes Login Button
 	loginButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
 	loginButton.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+35 , self.view.frame.size.height/2.0-48, 90, 75);
 	loginButton.backgroundColor = [UIColor clearColor];
@@ -81,13 +66,13 @@
 	[loginButton addTarget:self action:@selector(infoButtonPressed:)forControlEvents:UIControlEventTouchUpInside];
 	[loginButton setEnabled: NO];
 	
-	//Disabled Settings for Login Button
+	// Disabled Settings for Login Button
 	
 	[loginButton setBackgroundImage:[UIImage imageNamed:@"greyButton-1.png"] forState:UIControlStateDisabled];
 	loginButton.adjustsImageWhenDisabled = YES;
 	if( loginButton.enabled==NO){
 		
-		//sets user intructions for login
+		// sets user intructions for login
 		loginInstructions = [[UILabel alloc]
 				initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+20,  self.view.frame.size.height/2.0+25, 125,200)];
 		loginInstructions.text = @"Have not chosen \n a Location \nAND\n a Room";
@@ -101,33 +86,24 @@
 	}
 	
 	
-	
-	
-	
-	
-	//Headers
+	// Headers
 	HeaderView *headerLocation =[[[HeaderView alloc] 
 			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Locations"] retain];
 	HeaderView *headerRoom =[[[HeaderView alloc] 
 			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"] retain];
 
+
 	
-	
-    
-	
-	//Borders
+	// Borders
 	UIView *locationBorder = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) -2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
 	[locationBorder setBackgroundColor:[UIColor grayColor]];
 	
 	UIView *roomBorder = [[UIView alloc] initWithFrame:
 						   CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
 	[roomBorder setBackgroundColor:[UIColor grayColor]];
+		
 	
-
-	
-	
-
-	//Instruction text
+	// Instruction text
 	logoSlide = [[UILabel alloc] 
 					initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize -45 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+45, locSizeX+4,75)];
 	logoSlide.text = @"Slide";
@@ -163,11 +139,7 @@
 	roomInstructions.font = [UIFont boldSystemFontOfSize:20.0f];
 	
 	
-	
-	
-	
-	
-	//Add Elements to View
+	// Add Elements to View
 	[self.view addSubview:picView];
 	[self.view addSubview:loginButton];
 	[self.view addSubview:arrowView];
@@ -186,12 +158,7 @@
 }
 
 
-
-
-
-
-
-//Dictates what action to take when a User makes a selection
+// Dictates what action to take when a User makes a selection
 -(void)infoButtonPressed:(id)sender{
 	
 	NSLog(@"I have been pressed");
@@ -199,17 +166,11 @@
 
 
 
-
-
-
-
-
-
-//Stores the location the User seleted in chosenLocation then updates login instructions
--(void)ChooseLocationWithLocation:(NSString *)loc{
+// Stores the location the User seleted in chosenLocation then updates login instructions
+-(void)chooseLocationWithLocation:(NSString *)loc{
 	
 	chosenLocation= loc;
-	//Updates our Login Button and Login Intstuctions to match the Users selections
+	// Updates our Login Button and Login intstructions to match the Users selections
 	if(chosenRoom!=NULL){
 		[loginButton setEnabled: YES];
 		loginInstructions.text = @" ";
@@ -221,12 +182,8 @@
 }		
 
 
-
-
-
-
-//Stores the room the User seleted in chosenRoom then updates login instructions
--(void)ChooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted{
+// Stores the room the user seleted in chosenRoom then updates login instructions
+-(void)chooseRoomWithRoom:(NSString *)room withMeeting:(NSString *)meeting withCount:(NSString*)counted{
 	
 	chosenRoom= room;
 	//Updates our Login Button and Login Intstuctions to match the Users selections
@@ -241,12 +198,8 @@
 }	
 
 
-
-
-
-
-//Decides what movement to take based on our current location (currentPage) and the size and direction of our stroke (begin-end)
-//Then updates the view and the currentPage variable to match those movements
+// Decides what movement to take based on our current location (currentPage) and the size and direction of our stroke (begin-end)
+// Then updates the view and the currentPage variable to match those movements
 -(void)moveWithBegin:(CGFloat)begin withEnd:(CGFloat)end{
 	
 	[UIView beginAnimations:@"move_to_Left" context:NULL];
@@ -303,14 +256,12 @@
 	[UIView commitAnimations];
 }
 
-	
-	
 
 
-//Handling Touches
+// Handling Touches
 
-//When a touch begins, the x coordinate from our current view and the super view behind it is stored
-//Only the x coordinate is needed, because our goal is to only allow the user to slide the screen horizontally
+// When a touch begins, the x coordinate from our current view and the super view behind it is stored
+// Only the x coordinate is needed, because our goal is to only allow the user to slide the screen horizontally
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 
 	UITouch *touch = [[event allTouches] anyObject];
@@ -321,9 +272,9 @@
 
 }
 
-//When the user moves there finger to make a swipe, we want the screen to move along with it
-//current touch keeps track of where the finger is in our view and then shifts the center of the screen 
-//based on the total distance that was moved. 
+// When the user moves there finger to make a swipe, we want the screen to move along with it
+// current touch keeps track of where the finger is in our view and then shifts the center of the screen 
+// based on the total distance that was moved. 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *touch = [[event allTouches] anyObject];
 	CGPoint currentTouch= [touch locationInView:self.view];
@@ -333,8 +284,8 @@
 	[UIView beginAnimations:@"move" context:NULL];
 	[UIView setAnimationDuration:0.005f];
 	
-	//If movement is within our range (so they don't go too far off screen), we want to shift the center
-	//the and statement allows for negitive direction.
+	// If movement is within our range (so they don't go too far off screen), we want to shift the center
+	// the and statement allows for negitive direction.
 	if((self.view.center.x+(currentPoint-beginPoint)<1601) && (self.view.center.x+(currentPoint-beginPoint)>-800)){
 		 self.view.center=CGPointMake(self.view.center.x+(currentPoint-beginPoint),self.view.center.y);
 	}
@@ -348,9 +299,9 @@
 
 
 // When a touch ends, we want to calculate the total distanced moved. 
-//Because we moved the center of our view, our end point didn't really change.
-//By subtracting the endPoint and beginPoint of the superview, we can see how much distance the point ACTUALLY traveled.
-//the moveWith method does this for us.
+// Because we moved the center of our view, our end point didn't really change.
+// By subtracting the endPoint and beginPoint of the superview, we can see how much distance the point ACTUALLY traveled.
+// the moveWith method does this for us.
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
 	UITouch *touch = [[event allTouches] anyObject];
     CGPoint endTouch = [touch locationInView:self.view.superview];

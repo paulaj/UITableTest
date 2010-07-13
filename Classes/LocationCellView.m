@@ -21,26 +21,17 @@
     return self;
 }
 
-
 //Setter for Location
 - (void) setLoc:(NSString *)newLoc {
     loc = newLoc;
 }
 
-
-
-
-
-//Fills the Cell with Information on Location
+// Fills the cell with information on Location
 - (void)drawRect:(CGRect)rect {
     NSString *string =[@" " stringByAppendingString:loc];
     [[UIColor blackColor] set];
     [string drawInRect:self.bounds withFont:[UIFont systemFontOfSize:18] lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
 }
-
-
-
-
 
 - (void)dealloc {
     [super dealloc];
