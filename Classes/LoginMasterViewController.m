@@ -39,26 +39,22 @@
 	CGFloat locSizeX=400.0;
 	CGFloat locSizeY=500.0;
 	
-	
-	
 	// Elements in the Login page (Our Logo, Our Location Table and Our Room Table)
 	LogoView *picView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"tin_can_phone.jpg"] 
-			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize) ] retain];
+			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize , self.view.frame.size.height/2.0 -(picSize/2.0), picSize, picSize)] autorelease];
 	
-	locViewController = [[[LocationViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] retain];
+	locViewController = [[[LocationViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] autorelease];
 	
-	roomViewController = [[[RoomViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] retain];
-	
+	roomViewController = [[[RoomViewController alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0), locSizeX, locSizeY) withController:self] autorelease];
 	
 	// Arrows
 	LogoView *arrowView= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"rightarrow.png"] 
-			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize +300 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50) ] retain];
+			withFrame: CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize +300 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50)] autorelease];
 	LogoView *arrowView2= [[[LogoView alloc] initWithImage:[UIImage imageNamed:@"rightarrow.png"] 
-			withFrame: CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)+270 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50) ] retain];
-
+			withFrame: CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)+270 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+60, 50, 50)] autorelease];
 
 	// Initializes Login Button
-	loginButton = [[UIButton buttonWithType:UIButtonTypeRoundedRect] retain];
+	loginButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	loginButton.frame = CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0) +locSizeX +(arrowSize/2.0))+35 , self.view.frame.size.height/2.0-48, 90, 75);
 	loginButton.backgroundColor = [UIColor clearColor];
 	[loginButton setTitle:@"Login" forState: UIControlStateNormal];
@@ -87,25 +83,25 @@
 	
 	
 	// Headers
-	HeaderView *headerLocation =[[[HeaderView alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Locations"] retain];
-	HeaderView *headerRoom =[[[HeaderView alloc] 
-			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"] retain];
+	HeaderView *headerLocation =[[HeaderView alloc] 
+			initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Locations"];
+	HeaderView *headerRoom =[[HeaderView alloc] 
+			initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)) , self.view.frame.size.height/2.0-(locSizeY/2.0)-60, locSizeX, 60) withTitle:@"Rooms"];
 
 
 	
 	// Borders
-	UIView *locationBorder = [[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) -2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
+	UIView *locationBorder = [[[UIView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0) -2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)] autorelease];
 	[locationBorder setBackgroundColor:[UIColor grayColor]];
 	
-	UIView *roomBorder = [[UIView alloc] initWithFrame:
-						   CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)];
+	UIView *roomBorder = [[[UIView alloc] initWithFrame:
+						   CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0))-2, self.view.frame.size.height/2.0-(locSizeY/2.0)-62, locSizeX+4,locSizeY+64)] autorelease];
 	[roomBorder setBackgroundColor:[UIColor grayColor]];
 		
 	
 	// Instruction text
-	logoSlide = [[UILabel alloc] 
-					initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize -45 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+45, locSizeX+4,75)];
+	UILabel *logoSlide = [[[UILabel alloc] 
+					initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(1.5*arrowSpace)-(1.5*arrowSize)-(picSize)+arrowSize -45 , self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+45, locSizeX+4,75)] autorelease];
 	logoSlide.text = @"Slide";
 	logoSlide.numberOfLines = 0;
 	logoSlide.textAlignment = UITextAlignmentCenter;
@@ -113,8 +109,8 @@
 	logoSlide.backgroundColor = [UIColor clearColor];
 	logoSlide.font = [UIFont systemFontOfSize:30.0f];
 
-	locationSlide = [[UILabel alloc] 
-					initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)-90, self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+45, locSizeX+4,75)];
+	UILabel *locationSlide = [[[UILabel alloc] 
+					initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0)-90, self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY+45, locSizeX+4,75)] autorelease];
 	locationSlide.text = @"Slide";
 	locationSlide.numberOfLines = 0;
 	locationSlide.textAlignment = UITextAlignmentCenter;
@@ -122,7 +118,7 @@
 	locationSlide.backgroundColor = [UIColor clearColor];
 	locationSlide.font = [UIFont systemFontOfSize:30.0f];
 
-	locationInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)];
+	UILabel *locationInstructions = [[[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0-(locSizeX/2.0), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)] autorelease];
 	locationInstructions.numberOfLines = 0;
 	locationInstructions.text = @"Choose your physical location";
 	locationInstructions.textAlignment = UITextAlignmentCenter;
@@ -130,7 +126,7 @@
 	locationInstructions.backgroundColor = [UIColor blackColor];
 	locationInstructions.font = [UIFont boldSystemFontOfSize:20.0f];
 
-	roomInstructions = [[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)];
+	UILabel *roomInstructions = [[[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2.0+(1.5*arrowSpace)+(arrowSpace-(locSizeX/2.0)), self.view.frame.size.height/2.0-(locSizeY/2.0)+locSizeY, locSizeX+4,50)] autorelease];
 	roomInstructions.numberOfLines = 0;
 	roomInstructions.text = @"Choose a virtual room";
 	roomInstructions.textAlignment = UITextAlignmentCenter;
@@ -331,13 +327,8 @@
 }
 
 - (void)dealloc {
-	
-	[locationSlide release];
-	[logoSlide release];
-	
-	[roomInstructions release];
-	[loginInstructions release];
-	
+    [loginButton release];
+	    
     [self.view release];
     [super dealloc];
 }

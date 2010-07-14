@@ -30,15 +30,9 @@
 	NSString *chosenLocation;
 	NSString *chosenRoom;
 	
-	// Text to appear on screen
-	UILabel *loginInstructions;
-	UILabel *roomInstructions;
-	UILabel *locationInstructions;
-	UILabel *locationSlide;
-	UILabel *logoSlide;
 	UIButton *loginButton;
-	
-	
+    UILabel *loginInstructions;
+    
 	LocationViewController *locViewController;
 	RoomViewController *roomViewController;
 }
